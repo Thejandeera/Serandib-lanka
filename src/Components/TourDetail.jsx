@@ -1,86 +1,197 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { MapPin, Clock, Calendar, Star, CheckCircle, ArrowLeft } from 'lucide-react';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import { toursData } from '../pages/Tours'; // Importing data (or define it here if keeping files separate)
+import { MapPin, Clock, Star, CheckCircle, ArrowLeft, MessageCircle, Calendar, Users } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
+import Navbar from '../Components/Navbar';
+import { toursData } from '../pages/Tours';
 
 const TourDetail = () => {
     const { id } = useParams();
-    const tour = toursData.find(t => t.id === parseInt(id)) || toursData[0]; // Fallback to first if not found
+    const navigate = useNavigate();
+    const tourData = toursData.find(tour => tour.id === parseInt(id)) || toursData[0];
+
+    const handleWhatsAppBooking = () => {
+        const message = encodeURIComponent(`Hi! I'm interested in booking the "${tourData.title}" tour (${tourData.price}). Can you provide more details?`);
+        window.open(`https://wa.me/94785329002?text=${message}`, '_blank');
+    };
 
     return (
-        <div className="font-sans">
-            <Navbar />
-
-            {/* Hero Banner */}
-            <div className="relative h-[60vh] w-full overflow-hidden">
-                <img src={tour.image} alt={tour.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-black/40"></div>
-                <div className="absolute bottom-0 left-0 w-full p-8 md:p-16 text-white bg-gradient-to-t from-black/80 to-transparent">
-                    <div className="container mx-auto">
-                        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-                            <Link to="/tours" className="inline-flex items-center text-sm text-lime-300 mb-4 hover:underline"><ArrowLeft size={16} className="mr-1" /> Back to Tours</Link>
-                            <h1 className="text-4xl md:text-6xl font-extrabold mb-4">{tour.title}</h1>
-                            <div className="flex flex-wrap gap-6 items-center">
-                                <span className="flex items-center gap-2"><MapPin size={20} className="text-lime-400" /> {tour.location}</span>
-                                <span className="flex items-center gap-2"><Clock size={20} className="text-lime-400" /> {tour.days}</span>
-                                <span className="flex items-center gap-2 text-yellow-400"><Star fill="currentColor" size={20} /> {tour.rating}.0 (120 Reviews)</span>
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
+        <div className="min-h-screen bg-white relative overflow-hidden">
+            {/* Textured Background */}
+            <div className="absolute top-0 left-0 w-full h-full z-0 opacity-5 pointer-events-none">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="black" strokeWidth="1" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
             </div>
 
-            <section className="py-16 bg-white">
-                <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Animated Blobs */}
+            <div className="absolute top-20 left-[-10%] w-96 h-96 bg-lime-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
+            <div className="absolute bottom-20 right-[-10%] w-96 h-96 bg-emerald-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-lime-50 rounded-full mix-blend-multiply filter blur-3xl opacity-20 z-0"></div>
 
-                    {/* Main Content */}
-                    <div className="lg:col-span-2 space-y-8">
-                        <div>
-                            <h2 className="text-2xl font-bold text-black mb-4">Overview</h2>
-                            <p className="text-gray-600 leading-relaxed text-lg">{tour.desc} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
+            <div className="relative z-20">
+                <Navbar />
 
-                        <div>
-                            <h2 className="text-2xl font-bold text-black mb-4">Highlights</h2>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                {['Professional Guide', 'Luxury Transport', 'Breakfast Included', 'Entrance Tickets', 'Photo Ops', 'Water Bottles'].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3 text-gray-700">
-                                        <CheckCircle size={18} className="text-lime-600" /> {item}
-                                    </li>
-                                ))}
-                            </ul>
+                {/* Hero Banner */}
+                <div className="relative h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[70vh] w-full">
+                    <img
+                        src={tourData.image}
+                        alt={tourData.title}
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                    <div className="absolute inset-0 flex items-end">
+                        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8 md:pb-12">
+                            <button
+                                onClick={() => navigate(-1)}
+                                className="inline-flex items-center text-xs sm:text-sm text-white/80 hover:text-white mb-4 sm:mb-6 backdrop-blur-sm bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full transition-all hover:bg-white/20"
+                            >
+                                <ArrowLeft size={14} className="mr-2 sm:w-4 sm:h-4" /> Back to Tours
+                            </button>
+                            <div className="max-w-4xl">
+                                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-4 sm:mb-6 drop-shadow-lg">
+                                    {tourData.title}
+                                </h1>
+                                <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 items-center text-white text-xs sm:text-sm md:text-base">
+                                    <div className="flex items-center gap-2 backdrop-blur-md bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
+                                        <MapPin size={16} className="text-lime-300 flex-shrink-0 sm:w-5 sm:h-5" />
+                                        <span className="truncate">{tourData.location}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 backdrop-blur-md bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
+                                        <Clock size={16} className="text-lime-300 flex-shrink-0 sm:w-5 sm:h-5" />
+                                        <span>{tourData.days}</span>
+                                    </div>
+                                    <div className="flex items-center gap-2 backdrop-blur-md bg-white/10 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full">
+                                        <Star fill="currentColor" size={16} className="text-yellow-400 flex-shrink-0 sm:w-5 sm:h-5" />
+                                        <span>{tourData.rating}.0 Rating</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    {/* Sidebar Booking */}
-                    <div className="relative">
-                        <div className="sticky top-24 bg-white border border-gray-100 rounded-3xl p-8 shadow-xl">
-                            <div className="flex justify-between items-end mb-6">
-                                <div>
-                                    <span className="text-gray-500 text-sm">Starting from</span>
-                                    <div className="text-3xl font-extrabold text-black">{tour.price}</div>
+                {/* Content Section */}
+                <section className="py-8 sm:py-12 md:py-16">
+                    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12">
+                            {/* Main Content - Scrollable */}
+                            <div className="lg:col-span-2 space-y-6 sm:space-y-8">
+                                {/* Overview Card */}
+                                <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                                        <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-lime-500 rounded-full"></div>
+                                        Overview
+                                    </h2>
+                                    <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+                                        {tourData.desc} Experience the majesty of this ancient wonder as you climb through the water gardens and mirror wall to reach the summit. Marvel at the ancient frescoes and enjoy panoramic views of the surrounding landscape. This UNESCO World Heritage site offers a perfect blend of history, culture, and natural beauty.
+                                    </p>
                                 </div>
-                                <div className="bg-lime-100 text-lime-800 px-3 py-1 rounded-full text-xs font-bold">Best Price</div>
+
+                                {/* Highlights Card */}
+                                <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                                        <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-lime-500 rounded-full"></div>
+                                        Tour Highlights
+                                    </h2>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                                        {[
+                                            'Professional Tour Guide',
+                                            'Luxury Air-Conditioned Transport',
+                                            'All Meals Included',
+                                            'Entrance Tickets Covered',
+                                            'Professional Photography',
+                                            'Complimentary Water Bottles',
+                                            'Travel Insurance',
+                                            '24/7 Support Available'
+                                        ].map((item, i) => (
+                                            <div
+                                                key={i}
+                                                className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/80 hover:border-lime-300 transition-all"
+                                            >
+                                                <CheckCircle size={18} className="text-lime-600 flex-shrink-0 sm:w-5 sm:h-5" />
+                                                <span className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">{item}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Itinerary Card */}
+                                <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
+                                        <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-lime-500 rounded-full"></div>
+                                        Detailed Itinerary
+                                    </h2>
+                                    <div className="space-y-3 sm:space-y-4">
+                                        {[
+                                            { day: 'Day 1', title: 'Arrival & Water Gardens', desc: 'Begin your journey exploring the beautiful water gardens and ancient hydraulic systems.' },
+                                            { day: 'Day 2', title: 'Summit Climb & Departure', desc: 'Early morning climb to the summit, explore the frescoes, and enjoy breathtaking views.' }
+                                        ].map((item, i) => (
+                                            <div key={i} className="flex flex-col sm:flex-row gap-3 sm:gap-4 p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/80">
+                                                <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-lime-500 to-emerald-500 rounded-xl sm:rounded-2xl flex items-center justify-center text-white font-bold shadow-lg text-xs sm:text-sm">
+                                                    {item.day}
+                                                </div>
+                                                <div className="flex-1">
+                                                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1 sm:mb-2">{item.title}</h3>
+                                                    <p className="text-xs sm:text-sm md:text-base text-gray-600">{item.desc}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
 
-                            <form className="space-y-4">
-                                <input type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-lime-500" />
-                                <input type="email" placeholder="Email Address" className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-lime-500" />
-                                <input type="date" className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-lime-500" />
-                                <button className="w-full bg-black text-white py-4 rounded-xl font-bold hover:bg-lime-600 transition-colors">
-                                    Book This Tour
-                                </button>
-                            </form>
-                            <p className="text-center text-gray-400 text-xs mt-4">No credit card required for inquiry</p>
+                            {/* Booking Sidebar - Sticky on Desktop */}
+                            <div className="lg:col-span-1">
+                                <div className="lg:sticky lg:top-24 backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
+                                    <div className="flex justify-between items-end mb-6 sm:mb-8">
+                                        <div>
+                                            <span className="text-gray-500 text-xs sm:text-sm">Starting from</span>
+                                            <div className="text-3xl sm:text-4xl font-extrabold text-gray-900">{tourData.price}</div>
+                                            <span className="text-gray-500 text-xs sm:text-sm">per person</span>
+                                        </div>
+                                        <div className="bg-lime-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold shadow-lg">
+                                            Best Value
+                                        </div>
+                                    </div>
+
+                                    {/* Quick Info */}
+                                    <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 p-4 sm:p-6 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/80">
+                                        <div className="flex items-center gap-2 sm:gap-3 text-gray-700 text-sm sm:text-base">
+                                            <Calendar size={18} className="text-lime-600 flex-shrink-0 sm:w-5 sm:h-5" />
+                                            <span className="font-medium">{tourData.days} Duration</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 sm:gap-3 text-gray-700 text-sm sm:text-base">
+                                            <Users size={18} className="text-lime-600 flex-shrink-0 sm:w-5 sm:h-5" />
+                                            <span className="font-medium">Min 2 People</span>
+                                        </div>
+                                        <div className="flex items-center gap-2 sm:gap-3 text-gray-700 text-sm sm:text-base">
+                                            <Star size={18} className="text-lime-600 flex-shrink-0 sm:w-5 sm:h-5" fill="currentColor" />
+                                            <span className="font-medium">120+ Reviews</span>
+                                        </div>
+                                    </div>
+
+                                    {/* WhatsApp Booking Button */}
+                                    <button
+                                        onClick={handleWhatsAppBooking}
+                                        className="w-full bg-gradient-to-r from-lime-500 to-emerald-500 hover:from-lime-600 hover:to-emerald-600 text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg flex items-center justify-center gap-2 sm:gap-3 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1 group"
+                                    >
+                                        <MessageCircle size={20} className="group-hover:scale-110 transition-transform sm:w-6 sm:h-6" />
+                                        Book via WhatsApp
+                                    </button>
+                                    <p className="text-center text-gray-500 text-xs mt-3 sm:mt-4">
+                                        💬 Chat with us directly for instant booking
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-            </section>
-            <Footer />
+                </section>
+            </div>
         </div>
     );
 };
