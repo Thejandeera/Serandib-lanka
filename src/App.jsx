@@ -4,12 +4,14 @@ import Navbar from './Components/Navbar'
 import TourSlider from './Components/TourSlider'
 import VehicleCollection from './Components/VehicleCollection'
 import Footer from './Components/Footer'
+import WhoAreWe from './Components/WhoAreWe'
 
 const App = () => {
   return (
     <div className="font-sans">
       <Navbar />
       <Hero />
+      <WhoAreWe />
       <TourSlider />
       <VehicleCollection />
       <Footer />
