@@ -3,16 +3,7 @@ import { MapPin, Star, ChevronRight, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
-
-// Shared Data
-export const toursData = [
-    { id: 1, image: "https://images.unsplash.com/photo-1570544820299-1fa11c6d1fc8?w=800", location: "Sigiriya, Sri Lanka", title: "Sigiriya Rock Fortress", rating: 5, price: "$299", days: "2 Days", desc: "Climb the ancient rock fortress and explore the water gardens." },
-    { id: 2, image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800", location: "Gampola, Sri Lanka", title: "Ambuluwawa Tower", rating: 5, price: "$189", days: "1 Day", desc: "Experience biodiversity and breathtaking views from the tower." },
-    { id: 3, image: "https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=800", location: "Ella, Sri Lanka", title: "Upcountry Adventure", rating: 5, price: "$349", days: "3 Days", desc: "Ride the train, visit Nine Arches Bridge, and hike Little Adam's Peak." },
-    { id: 4, image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800", location: "Katharagama, Sri Lanka", title: "Yala Safari Experience", rating: 5, price: "$399", days: "2 Days", desc: "Spot leopards and elephants in the wild." },
-    { id: 5, image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", location: "Galle, Sri Lanka", title: "Coastal Heritage", rating: 5, price: "$259", days: "2 Days", desc: "Walk the ramparts of the Dutch Fort and relax on the beach." },
-    { id: 6, image: "https://images.unsplash.com/photo-1587974928442-77dc3e4dba72?w=800", location: "Nuwara Eliya, Sri Lanka", title: "Tea Trail Expedition", rating: 5, price: "$329", days: "3 Days", desc: "Visit tea factories and enjoy the cool climate." },
-];
+import { toursData } from '../data/toursData';
 
 const Tours = () => {
     const navigate = useNavigate();

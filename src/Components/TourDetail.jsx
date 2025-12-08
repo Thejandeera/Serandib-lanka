@@ -2,7 +2,7 @@ import React from 'react';
 import { MapPin, Clock, Star, CheckCircle, ArrowLeft, MessageCircle, Calendar, Users } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
-import { toursData } from '../pages/Tours';
+import { toursData } from '../data/toursData';
 
 const TourDetail = () => {
     const { id } = useParams();
