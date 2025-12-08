@@ -24,13 +24,13 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-white pt-20 pb-10 overflow-hidden border-t border-gray-100">
-      
+
       {/* ---- Background Patterns (Consistent with other sections) ---- */}
       <div className="absolute top-0 left-0 w-full h-full z-0 opacity-5 pointer-events-none">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid-footer" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="black" strokeWidth="1"/>
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="black" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid-footer)" />
@@ -43,28 +43,28 @@ const Footer = () => {
 
 
       <div className="container mx-auto px-4 relative z-10">
-        
+
         {/* ---- Top Section: Grid Layout ---- */}
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={containerVariants}
         >
-          
+
           {/* Column 1: Brand & About */}
           <motion.div variants={itemVariants} className="space-y-6">
             <Link to="/" className="block w-40">
-                <img 
-                    src="/images/logo.png" 
-                    alt="Serandib Lanka Tours" 
-                    className="w-full h-auto object-contain"
-                    onError={(e) => {
-                        e.target.style.display='none'; 
-                        e.target.parentElement.innerHTML = '<span class="text-2xl font-bold text-black">Serandib<span class="text-lime-600">.</span></span>'
-                    }} 
-                />
+              <img
+                src="/images/logo.png"
+                alt="Serandib Lanka Tours"
+                className="w-full h-auto object-contain"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = '<span class="text-2xl font-bold text-black">Serandib<span class="text-lime-600">.</span></span>'
+                }}
+              />
             </Link>
             <p className="text-gray-600 leading-relaxed">
               Discover the hidden gems of Sri Lanka with us. We provide premium tours and vehicle services to make your journey unforgettable.
@@ -72,9 +72,9 @@ const Footer = () => {
             {/* Social Icons */}
             <div className="flex gap-4">
               {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                <a 
-                  key={i} 
-                  href="#" 
+                <a
+                  key={i}
+                  href="#"
                   className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:bg-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <Icon size={18} />
@@ -92,7 +92,7 @@ const Footer = () => {
                 <li key={item}>
                   <Link to="#" className="text-gray-600 hover:text-lime-600 transition-colors flex items-center gap-2 group">
                     <span className="w-0 overflow-hidden group-hover:w-4 transition-all duration-300">
-                        <ArrowRight size={14} />
+                      <ArrowRight size={14} />
                     </span>
                     {item}
                   </Link>
@@ -110,7 +110,7 @@ const Footer = () => {
                 <li key={item}>
                   <Link to="#" className="text-gray-600 hover:text-lime-600 transition-colors flex items-center gap-2 group">
                     <span className="w-0 overflow-hidden group-hover:w-4 transition-all duration-300">
-                        <ArrowRight size={14} />
+                      <ArrowRight size={14} />
                     </span>
                     {item}
                   </Link>
@@ -133,7 +133,7 @@ const Footer = () => {
                   <p className="text-gray-600 text-sm">123, Temple Road, Colombo 07, Sri Lanka</p>
                 </div>
               </li>
-              
+
               <li className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-full bg-lime-50 flex items-center justify-center flex-shrink-0 text-lime-600">
                   <Phone size={20} />
@@ -161,7 +161,7 @@ const Footer = () => {
 
 
         {/* ---- Bottom Bar: Copyright ---- */}
-        <motion.div 
+        <motion.div
           className="pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -171,7 +171,16 @@ const Footer = () => {
           <p className="text-gray-500 text-sm text-center md:text-left">
             © {new Date().getFullYear()} <span className="font-bold text-black">Serandib Lanka Tours</span>. All rights reserved.
           </p>
-          
+
+          <a
+            href="https://zenvixor.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 text-sm hover:text-black transition-colors font-medium text-center"
+          >
+            Designed and Crafted by <span className="font-bold">Zenvixor Studios</span>
+          </a>
+
           <div className="flex items-center gap-6">
             <Link to="#" className="text-gray-500 hover:text-black text-sm transition-colors">Privacy</Link>
             <Link to="#" className="text-gray-500 hover:text-black text-sm transition-colors">Cookies</Link>

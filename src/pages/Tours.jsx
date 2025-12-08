@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, Star, ChevronRight, Sparkles } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 // Shared Data
 export const toursData = [
@@ -20,7 +21,7 @@ const Tours = () => {
         navigate(`/tour/${tourId}`);
     };
 
-    return (
+    return (<>
         <div className="min-h-screen bg-white relative overflow-hidden pt-16 sm:pt-20 md:pt-24">
             {/* Textured Background */}
             <div className="absolute top-0 left-0 w-full h-full z-0 opacity-5 pointer-events-none">
@@ -158,6 +159,7 @@ const Tours = () => {
                 }
             `}</style>
         </div>
+        <Footer /></>
     );
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Car, Bus, Sparkles, ChevronRight, Users, Fuel, Gauge } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 // Shared Data
 export const vehiclesData = [
@@ -19,7 +20,7 @@ const Vehicles = () => {
         navigate(`/vehicle/${vehicleId}`);
     };
 
-    return (
+    return (<>
         <div className="min-h-screen bg-white relative overflow-hidden pt-16 sm:pt-20 md:pt-24">
             {/* Textured Background */}
             <div className="absolute top-0 left-0 w-full h-full z-0 opacity-5 pointer-events-none">
@@ -168,6 +169,8 @@ const Vehicles = () => {
                 }
             `}</style>
         </div>
+        <Footer />
+    </>
     );
 };
 
