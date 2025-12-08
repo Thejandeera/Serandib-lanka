@@ -10,7 +10,10 @@ import Tours from './pages/Tours';
 import Vehicles from './pages/Vehicles';
 import TourDetail from './Components/TourDetail';
 import VehicleDetail from './Components/VehicleDetail';
-
+import Services from './pages/Services';
+import Reviews from './pages/Reviews';
+import About from './pages/About';
+import Contact from './pages/Contact';
 // Wrapper for the Home Page content
 const Home = () => (
   <>
@@ -33,6 +36,10 @@ const App = () => {
         {/* Listing Routes */}
         <Route path="/tours" element={<Tours />} />
         <Route path="/vehicles" element={<Vehicles />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
 
 
         <Route path="/tour/:id" element={<TourDetail />} />
