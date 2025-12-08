@@ -1,20 +1,45 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useAnimationFrame, useMotionValue, useTransform } from 'framer-motion';
 import { MapPin, Star, ChevronRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { toursData } from '../data/toursData';
+import { toursData } from '../data/toursData'; // Adjust path if needed based on your file structure
 
 // Double the items for a seamless loop
-const repeatedTours = [...toursData, ...toursData];
+const repeatedTours = [...toursData, ...toursData, ...toursData]; // Tripled for smoother infinite wrap on large screens
+
+const wrap = (min, max, v) => {
+  const rangeSize = max - min;
+  return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+};
 
 const TourSlider = () => {
+  const baseX = useMotionValue(0);
+  const [width, setWidth] = useState(0);
+  const containerRef = useRef(null);
+
+  // Measure the width of a single set of items
+  useEffect(() => {
+    if (containerRef.current) {
+      // We divide by 3 because we tripled the array. We want the width of one set.
+      setWidth(containerRef.current.scrollWidth / 3);
+    }
+  }, []);
+
+  // Animation Loop
+  useAnimationFrame((t, delta) => {
+    // Move left by subtracting (Adjust "0.5" to change speed)
+    let moveBy = -0.5 * (delta / 16);
+    baseX.set(baseX.get() + moveBy);
+  });
+
+  // Wrap the position so it loops infinitely between -width and 0
+  const x = useTransform(baseX, (v) => `${wrap(-width, 0, v)}px`);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -71,7 +96,6 @@ const TourSlider = () => {
             className="text-4xl md:text-6xl font-extrabold text-black mb-6 leading-tight"
             variants={containerVariants}
           >
-
             <span className="relative inline-block">
               Featured Tours
               <span className="absolute -bottom-2 left-0 w-full h-3 bg-lime-200 opacity-50 -z-10 rounded-full"></span>
@@ -89,26 +113,25 @@ const TourSlider = () => {
 
         {/* Slider Container */}
         <div className="relative">
-          {/* Left Gradient Fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none"></div>
+          {/* Left Gradient Fade - Hidden on Mobile */}
+          <div className="hidden md:block absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none"></div>
 
-          {/* Right Gradient Fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
+          {/* Right Gradient Fade - Hidden on Mobile */}
+          <div className="hidden md:block absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
 
-          {/* Ticker Container */}
-          <div className="flex overflow-hidden">
+          {/* Ticker Container with Pan (Drag) Handler */}
+          <div
+            className="flex overflow-hidden cursor-grab active:cursor-grabbing"
+            // Use onPan to influence the motion value without stopping the animation loop
+            onPointerDown={(e) => e.preventDefault()} // Prevent text selection
+          >
             <motion.div
+              ref={containerRef}
               className="flex gap-6 md:gap-8 whitespace-nowrap"
-              animate={{
-                x: [0, -1920], // Updated for more cards
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 40, // Slower speed for better viewing
-                  ease: "linear",
-                },
+              style={{ x }}
+              onPan={(e, info) => {
+                // Adjust position based on drag delta
+                baseX.set(baseX.get() + info.delta.x);
               }}
             >
               {repeatedTours.map((tour, index) => (
@@ -120,14 +143,14 @@ const TourSlider = () => {
                   animate="visible"
                   whileHover="hover"
                 >
-                  <Link to={`/tour/${tour.id}`} className="block group/card">
+                  <Link to={`/tour/${tour.id}`} className="block group/card select-none" draggable="false">
                     {/* Card Container */}
                     <div className="relative rounded-[30px] overflow-hidden h-[280px] md:h-[360px] mb-6 shadow-lg hover:shadow-2xl transition-all duration-500">
                       {/* Image */}
                       <img
                         src={tour.image}
                         alt={tour.title}
-                        className="w-full h-full object-cover transform group-hover/card:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-cover transform group-hover/card:scale-110 transition-transform duration-700 pointer-events-none"
                       />
 
                       {/* Gradient Overlay */}
@@ -206,7 +229,6 @@ const TourSlider = () => {
         </motion.div>
       </div>
 
-      {/* Add CSS for blob animation if not already in global styles */}
       <style jsx>{`
         @keyframes blob {
           0% { transform: translate(0px, 0px) scale(1); }

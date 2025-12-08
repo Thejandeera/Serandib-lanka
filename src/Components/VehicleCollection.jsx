@@ -1,12 +1,38 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useAnimationFrame, useMotionValue, useTransform } from 'framer-motion';
 import { Car, Bus, Star, ChevronRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { vehiclesData } from '../data/vehiclesData';
+import { vehiclesData } from '../data/vehiclesData'; // Adjust path if needed
 
-// Double the items for seamless looping
-const repeatedVehicles = [...vehiclesData, ...vehiclesData];
+// Tripled items for smoother seamless looping
+const repeatedVehicles = [...vehiclesData, ...vehiclesData, ...vehiclesData];
+
+const wrap = (min, max, v) => {
+  const rangeSize = max - min;
+  return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+};
+
 const VehicleCollection = () => {
+  const baseX = useMotionValue(0);
+  const [width, setWidth] = useState(0);
+  const containerRef = useRef(null);
+
+  // Measure the width
+  useEffect(() => {
+    if (containerRef.current) {
+      setWidth(containerRef.current.scrollWidth / 3);
+    }
+  }, []);
+
+  // Animation Loop - Moving RIGHT (Positive direction)
+  useAnimationFrame((t, delta) => {
+    let moveBy = 0.5 * (delta / 16); // Positive speed for rightward movement
+    baseX.set(baseX.get() + moveBy);
+  });
+
+  // Wrap logic: When moving right, we still wrap between -width and 0 to maintain the strip continuity
+  const x = useTransform(baseX, (v) => `${wrap(-width, 0, v)}px`);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,6 +52,7 @@ const VehicleCollection = () => {
       transition: { duration: 0.3, ease: "easeInOut" }
     }
   };
+
   return (
     <section className="relative w-full pb-28 overflow-hidden bg-white">
 
@@ -44,9 +71,10 @@ const VehicleCollection = () => {
       {/* Background Blobs (Blue/Yellow for Vehicles) */}
       <div className="absolute top-1/4 right-[10%] w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob pointer-events-none"></div>
       <div className="absolute bottom-1/4 left-[10%] w-72 h-72 bg-yellow-50 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000 pointer-events-none"></div>
+
       <div className="container mx-auto px-4 relative z-10">
 
-        {/* ---- Header Section (Updated to match your snippet) ---- */}
+        {/* ---- Header Section ---- */}
         <motion.div
           className="text-center mb-16"
           initial="hidden"
@@ -72,7 +100,6 @@ const VehicleCollection = () => {
           >
             <span className="relative inline-block">
               Vehicle Collection
-              {/* Subtle underline accent using blue */}
               <span className="absolute -bottom-2 left-0 w-full h-3 bg-blue-200 opacity-50 -z-10 rounded-full"></span>
             </span>
           </motion.h2>
@@ -84,26 +111,25 @@ const VehicleCollection = () => {
             Travel in comfort and style with our diverse fleet of well-maintained vehicles. From luxury sedans to spacious buses, we have the perfect ride for your journey.
           </motion.p>
         </motion.div>
+
         {/* ---- Slider Container ---- */}
         <div className="relative">
-          {/* Gradient Fades for smooth edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
-          {/* Ticker Container */}
-          <div className="flex overflow-hidden">
+          {/* Gradient Fades - Hidden on Mobile */}
+          <div className="hidden md:block absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none"></div>
+          <div className="hidden md:block absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
+
+          {/* Ticker Container with Pan Support */}
+          <div
+            className="flex overflow-hidden cursor-grab active:cursor-grabbing"
+            onPointerDown={(e) => e.preventDefault()}
+          >
             <motion.div
+              ref={containerRef}
               className="flex gap-6 md:gap-8 whitespace-nowrap"
-              // ANIMATION: Move from a negative X value back to 0 to slide RIGHT (Opposite of Tours)
-              animate={{
-                x: [-1920, 0],
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 40,
-                  ease: "linear",
-                },
+              style={{ x }}
+              onPan={(e, info) => {
+                // Allow manual drag while preserving current velocity direction logic
+                baseX.set(baseX.get() + info.delta.x);
               }}
             >
               {repeatedVehicles.map((vehicle, index) => {
@@ -119,7 +145,7 @@ const VehicleCollection = () => {
                     whileHover="hover"
                     viewport={{ once: true }}
                   >
-                    <Link to={`/vehicle/${vehicle.id}`} className="block group/card">
+                    <Link to={`/vehicle/${vehicle.id}`} className="block group/card select-none" draggable="false">
 
                       {/* Card Container with White Background */}
                       <div className="relative rounded-[30px] overflow-hidden h-[280px] md:h-[320px] mb-6 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white flex items-center justify-center p-4">
@@ -128,7 +154,7 @@ const VehicleCollection = () => {
                         <img
                           src={vehicle.image}
                           alt={vehicle.title}
-                          className="w-auto h-auto max-w-[90%] max-h-[80%] object-contain transform group-hover/card:scale-110 transition-transform duration-700 z-10"
+                          className="w-auto h-auto max-w-[90%] max-h-[80%] object-contain transform group-hover/card:scale-110 transition-transform duration-700 z-10 pointer-events-none"
                           onError={(e) => { e.target.style.display = 'none'; e.target.parentElement.innerHTML = '<span class="text-gray-500">Image Not Found</span>' }}
                         />
 
