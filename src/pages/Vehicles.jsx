@@ -2,15 +2,8 @@ import React from 'react';
 import { Car, Bus, Sparkles, ChevronRight, Users, Fuel, Gauge } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
-
-// Shared Data
-export const vehiclesData = [
-    { id: 1, image: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800", title: "AC Van", type: "Van", rating: 5, price: "US$10", badge: "Premium", desc: "Spacious AC van perfect for family trips.", seats: "7-8", fuel: "Diesel" },
-    { id: 2, image: "https://images.unsplash.com/photo-1527786356703-4b100091cd2c?w=800", title: "Mini Van", type: "Van", rating: 5, price: "US$10", badge: "Standard", desc: "Comfortable mini van for small groups.", seats: "5-6", fuel: "Petrol" },
-    { id: 3, image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800", title: "Sedan Car", type: "Car", rating: 5, price: "US$10", badge: "Luxury", desc: "Premium sedan for a smooth couple's ride.", seats: "4-5", fuel: "Hybrid" },
-    { id: 4, image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=800", title: "AC Bus", type: "Bus", rating: 4.5, price: "US$10", badge: "Large Group", desc: "Fully AC bus for large tour groups.", seats: "30+", fuel: "Diesel" },
-    { id: 5, image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800", title: "Luxury SUV", type: "Car", rating: 5, price: "US$15", badge: "Off-Road", desc: "High-end SUV for rugged terrain and comfort.", seats: "5-7", fuel: "Petrol" },
-];
+import Footer from '../Components/Footer';
+import { vehiclesData } from '../data/vehiclesData';
 
 const Vehicles = () => {
     const navigate = useNavigate();
@@ -19,7 +12,7 @@ const Vehicles = () => {
         navigate(`/vehicle/${vehicleId}`);
     };
 
-    return (
+    return (<>
         <div className="min-h-screen bg-white relative overflow-hidden pt-16 sm:pt-20 md:pt-24">
             {/* Textured Background */}
             <div className="absolute top-0 left-0 w-full h-full z-0 opacity-5 pointer-events-none">
@@ -168,6 +161,8 @@ const Vehicles = () => {
                 }
             `}</style>
         </div>
+        <Footer />
+    </>
     );
 };
 

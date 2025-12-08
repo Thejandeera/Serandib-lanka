@@ -14,7 +14,8 @@ import Services from './pages/Services';
 import Reviews from './pages/Reviews';
 import About from './pages/About';
 import Contact from './pages/Contact';
-// Wrapper for the Home Page content
+import ScrollToTop from './Components/ScrollToTop';
+
 const Home = () => (
   <>
     <Navbar />
@@ -29,11 +30,12 @@ const Home = () => (
 const App = () => {
   return (
     <div className="font-sans">
+      <ScrollToTop />
       <Routes>
-        {/* Home Route */}
+
         <Route path="/" element={<Home />} />
 
-        {/* Listing Routes */}
+
         <Route path="/tours" element={<Tours />} />
         <Route path="/vehicles" element={<Vehicles />} />
         <Route path="/services" element={<Services />} />

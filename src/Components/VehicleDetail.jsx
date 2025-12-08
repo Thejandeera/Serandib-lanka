@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowLeft, MessageCircle, Users, Fuel, Gauge, CheckCircle, Shield, Award, Zap, DollarSign, Clock } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
-import { vehiclesData } from '../pages/Vehicles';
+import { vehiclesData } from '../data/vehiclesData';
 
 const VehicleDetail = () => {
     const { id } = useParams();

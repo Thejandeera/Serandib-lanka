@@ -1,28 +1,45 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useEffect, useState } from 'react';
+import { motion, useAnimationFrame, useMotionValue, useTransform } from 'framer-motion';
 import { MapPin, Star, ChevronRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const tours = [
-  { id: 1, image: "/images/tours/sigiriya.png", location: "Sigiriya, Sri Lanka", title: "Sigiriya Rock Fortress", rating: 5, price: "$299", days: "2 Days" },
-  { id: 2, image: "/images/tours/gampola.png", location: "Gampola, Sri Lanka", title: "Ambuluwawa Tower", rating: 5, price: "$189", days: "1 Day" },
-  { id: 3, image: "/images/tours/ella.png", location: "Ella, Sri Lanka", title: "Upcountry Adventure", rating: 5, price: "$349", days: "3 Days" },
-  { id: 4, image: "/images/tours/katharagama.png", location: "Katharagama, Sri Lanka", title: "Yala Safari Experience", rating: 5, price: "$399", days: "2 Days" },
-  { id: 5, image: "/images/tours/galle.png", location: "Galle, Sri Lanka", title: "Coastal Heritage", rating: 5, price: "$259", days: "2 Days" },
-  { id: 6, image: "/images/tours/nuwaraeliya.png", location: "Nuwara Eliya, Sri Lanka", title: "Tea Trail Expedition", rating: 5, price: "$329", days: "3 Days" },
-];
+import { toursData } from '../data/toursData'; // Adjust path if needed based on your file structure
 
 // Double the items for a seamless loop
-const repeatedTours = [...tours, ...tours];
+const repeatedTours = [...toursData, ...toursData, ...toursData]; // Tripled for smoother infinite wrap on large screens
+
+const wrap = (min, max, v) => {
+  const rangeSize = max - min;
+  return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+};
 
 const TourSlider = () => {
+  const baseX = useMotionValue(0);
+  const [width, setWidth] = useState(0);
+  const containerRef = useRef(null);
+
+  // Measure the width of a single set of items
+  useEffect(() => {
+    if (containerRef.current) {
+      // We divide by 3 because we tripled the array. We want the width of one set.
+      setWidth(containerRef.current.scrollWidth / 3);
+    }
+  }, []);
+
+  // Animation Loop
+  useAnimationFrame((t, delta) => {
+    // Move left by subtracting (Adjust "0.5" to change speed)
+    let moveBy = -0.5 * (delta / 16);
+    baseX.set(baseX.get() + moveBy);
+  });
+
+  // Wrap the position so it loops infinitely between -width and 0
+  const x = useTransform(baseX, (v) => `${wrap(-width, 0, v)}px`);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -46,7 +63,7 @@ const TourSlider = () => {
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid-tours" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="black" strokeWidth="1"/>
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="black" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid-tours)" />
@@ -59,13 +76,13 @@ const TourSlider = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header Section */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
         >
-          <motion.div 
+          <motion.div
             className="inline-flex items-center gap-2 mb-4 bg-lime-50 px-4 py-2 rounded-full border border-lime-100"
             variants={containerVariants}
           >
@@ -74,86 +91,84 @@ const TourSlider = () => {
               Best Holiday Packages
             </span>
           </motion.div>
-          
-          <motion.h2 
+
+          <motion.h2
             className="text-4xl md:text-6xl font-extrabold text-black mb-6 leading-tight"
             variants={containerVariants}
           >
-           
             <span className="relative inline-block">
               Featured Tours
               <span className="absolute -bottom-2 left-0 w-full h-3 bg-lime-200 opacity-50 -z-10 rounded-full"></span>
             </span>
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed"
             variants={containerVariants}
           >
-            Experience the beauty of Sri Lanka with our carefully curated tour packages. 
+            Experience the beauty of Sri Lanka with our carefully curated tour packages.
             Each journey is designed to create unforgettable memories.
           </motion.p>
         </motion.div>
 
         {/* Slider Container */}
         <div className="relative">
-          {/* Left Gradient Fade */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none"></div>
-          
-          {/* Right Gradient Fade */}
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
+          {/* Left Gradient Fade - Hidden on Mobile */}
+          <div className="hidden md:block absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none"></div>
 
-          {/* Ticker Container */}
-          <div className="flex overflow-hidden">
+          {/* Right Gradient Fade - Hidden on Mobile */}
+          <div className="hidden md:block absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
+
+          {/* Ticker Container with Pan (Drag) Handler */}
+          <div
+            className="flex overflow-hidden cursor-grab active:cursor-grabbing"
+            // Use onPan to influence the motion value without stopping the animation loop
+            onPointerDown={(e) => e.preventDefault()} // Prevent text selection
+          >
             <motion.div
+              ref={containerRef}
               className="flex gap-6 md:gap-8 whitespace-nowrap"
-              animate={{
-                x: [0, -1920], // Updated for more cards
-              }}
-              transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 40, // Slower speed for better viewing
-                  ease: "linear",
-                },
+              style={{ x }}
+              onPan={(e, info) => {
+                // Adjust position based on drag delta
+                baseX.set(baseX.get() + info.delta.x);
               }}
             >
               {repeatedTours.map((tour, index) => (
-                <motion.div 
-                  key={`${tour.id}-${index}`} 
+                <motion.div
+                  key={`${tour.id}-${index}`}
                   className="min-w-[280px] md:min-w-[360px] inline-block"
                   variants={cardVariants}
                   initial="hidden"
                   animate="visible"
                   whileHover="hover"
                 >
-                  <Link to={`/tour/${tour.id}`} className="block group/card">
+                  <Link to={`/tour/${tour.id}`} className="block group/card select-none" draggable="false">
                     {/* Card Container */}
                     <div className="relative rounded-[30px] overflow-hidden h-[280px] md:h-[360px] mb-6 shadow-lg hover:shadow-2xl transition-all duration-500">
                       {/* Image */}
-                      <img 
-                        src={tour.image} 
-                        alt={tour.title} 
-                        className="w-full h-full object-cover transform group-hover/card:scale-110 transition-transform duration-700"
+                      <img
+                        src={tour.image}
+                        alt={tour.title}
+                        className="w-full h-full object-cover transform group-hover/card:scale-110 transition-transform duration-700 pointer-events-none"
                       />
-                      
+
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
-                      
+
                       {/* Price Tag */}
                       <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
                         <span className="font-bold text-black text-lg">{tour.price}</span>
                         <span className="text-gray-600 text-sm ml-1">/person</span>
                       </div>
-                      
+
                       {/* Duration Tag */}
                       <div className="absolute bottom-4 left-4 bg-lime-500 text-white px-3 py-1.5 rounded-full text-sm font-semibold">
                         {tour.days}
                       </div>
-                      
+
                       {/* Hover Button */}
-                      <motion.div 
+                      <motion.div
                         className="absolute bottom-4 right-4 opacity-0 group-hover/card:opacity-100 translate-y-4 group-hover/card:translate-y-0 transition-all duration-500"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
@@ -170,11 +185,11 @@ const TourSlider = () => {
                         <MapPin size={18} className="text-gray-400 group-hover/card:text-lime-600 transition-colors" />
                         <span className="text-sm font-medium">{tour.location}</span>
                       </div>
-                      
+
                       <h3 className="text-2xl font-bold text-black mb-3 group-hover/card:text-lime-700 transition-colors duration-300">
                         {tour.title}
                       </h3>
-                      
+
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="flex">
@@ -184,7 +199,7 @@ const TourSlider = () => {
                           </div>
                           <span className="text-gray-500 text-sm font-medium">({tour.rating}.0)</span>
                         </div>
-                        
+
                         <span className="text-gray-500 text-sm font-medium group-hover/card:text-black transition-colors">
                           Book Now →
                         </span>
@@ -198,14 +213,14 @@ const TourSlider = () => {
         </div>
 
         {/* CTA Section */}
-        <motion.div 
+        <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <Link 
-            to="/tours" 
+          <Link
+            to="/tours"
             className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-lime-700 transition-colors duration-300 group/button shadow-lg hover:shadow-xl"
           >
             View All Tours
@@ -214,7 +229,6 @@ const TourSlider = () => {
         </motion.div>
       </div>
 
-      {/* Add CSS for blob animation if not already in global styles */}
       <style jsx>{`
         @keyframes blob {
           0% { transform: translate(0px, 0px) scale(1); }
