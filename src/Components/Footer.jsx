@@ -130,7 +130,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-black mb-1">Address</h4>
-                  <p className="text-gray-600 text-sm">123, Temple Road, Colombo 07, Sri Lanka</p>
+                  <p className="text-gray-600 text-sm"> Colombo 07, Sri Lanka</p>
                 </div>
               </li>
 
@@ -140,8 +140,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-black mb-1">Phone</h4>
-                  <p className="text-gray-600 text-sm">+94 77 123 4567</p>
-                  <p className="text-gray-600 text-sm">+94 11 234 5678</p>
+                  <p className="text-gray-600 text-sm">+94 70 467 8737</p>
                 </div>
               </li>
 
@@ -151,7 +150,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-black mb-1">Email</h4>
-                  <p className="text-gray-600 text-sm">hello@serandiblanka.com</p>
+                  <p className="text-gray-600 text-sm">serandiblankatours.info@gmail.com</p>
                 </div>
               </li>
             </ul>

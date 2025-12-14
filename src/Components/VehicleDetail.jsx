@@ -15,7 +15,7 @@ const VehicleDetail = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white relative overflow-hidden">
+        <div className="min-h-screen bg-white relative overflow-clip">
             {/* Textured Background */}
             <div className="absolute top-0 left-0 w-full h-full z-0 opacity-5 pointer-events-none">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -177,7 +177,7 @@ const VehicleDetail = () => {
 
                             {/* Booking Sidebar - Sticky on Desktop */}
                             <div className="lg:col-span-1">
-                                <div className="lg:sticky lg:top-24 backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
+                                <div className="lg:sticky lg:top-36 backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
                                     <div className="flex justify-between items-end mb-6 sm:mb-8">
                                         <div>
                                             <span className="text-gray-500 text-xs sm:text-sm">Starting from</span>
