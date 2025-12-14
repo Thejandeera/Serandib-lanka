@@ -12,12 +12,18 @@ const Tours = () => {
     // Filter State
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [searchQuery, setSearchQuery] = useState('');
+    const [visibleCount, setVisibleCount] = useState(6);
     const [filters, setFilters] = useState({
         categories: [],
         rating: 0
     });
 
     const categories = ["Pickup", "1 Day Tours", "2 Day Tours", "More than 2 Day Tours"];
+
+    // Reset visible count when filters change
+    React.useEffect(() => {
+        setVisibleCount(6);
+    }, [filters, searchQuery, selectedCategory]);
 
     // Handlers
     const handleCategoryChange = (category) => {
@@ -278,11 +284,11 @@ const Tours = () => {
                         {/* Tours Grid */}
                         <div className="w-full lg:w-3/4">
                             <div className="text-gray-500 mb-6 text-sm">
-                                Showing {filteredTours.length} tours
+                                Showing {Math.min(visibleCount, filteredTours.length)} of {filteredTours.length} tours
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
-                                {filteredTours.map((tour, index) => (
+                                {filteredTours.slice(0, visibleCount).map((tour, index) => (
                                     <div
                                         key={tour.id}
                                         className="group relative h-full"
@@ -370,6 +376,18 @@ const Tours = () => {
                                     </div>
                                 ))}
                             </div>
+
+                            {/* Load More Button */}
+                            {visibleCount < filteredTours.length && (
+                                <div className="mt-12 text-center">
+                                    <button
+                                        onClick={() => setVisibleCount(prev => prev + 6)}
+                                        className="px-8 py-3 bg-white border-2 border-gray-200 text-gray-900 rounded-full font-bold hover:bg-lime-50 hover:border-lime-500 hover:text-lime-700 transition-all duration-300 shadow-sm hover:shadow-md"
+                                    >
+                                        Load More Tours
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
