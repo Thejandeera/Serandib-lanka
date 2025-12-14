@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import {
     Car,
     MapPin,
@@ -19,6 +20,7 @@ import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
 const Services = () => {
+    const navigate = useNavigate();
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -69,7 +71,7 @@ const Services = () => {
             icon: Car,
             title: "Vehicle Rentals",
             description: "Travel in comfort and style with our diverse fleet of well-maintained vehicles. From luxury sedans to spacious buses, we have the perfect ride for your journey. All vehicles come with professional drivers who know every corner of the island.",
-            image: "/images/vehicles/acvan.png",
+            image: "/images/vehicles/van.png",
             position: "right"
         },
         {
@@ -227,7 +229,10 @@ const Services = () => {
                                         {service.description}
                                     </p>
 
-                                    <button className="inline-flex items-center gap-2 text-black font-bold hover:text-lime-600 transition-colors group">
+                                    <button
+                                        onClick={() => navigate('/contact')}
+                                        className="inline-flex items-center gap-2 text-black font-bold hover:text-lime-600 transition-colors group"
+                                    >
                                         <span>Learn More</span>
                                         <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
                                     </button>
@@ -322,7 +327,10 @@ const Services = () => {
                                 <p className="text-white/90 text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
                                     Get ready for an incredible journey with our team by your side! Contact us now to start planning your perfect Sri Lankan adventure.
                                 </p>
-                                <button className="inline-flex items-center gap-3 bg-white text-lime-700 px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                                <button
+                                    onClick={() => navigate('/tours')}
+                                    className="inline-flex items-center gap-3 bg-white text-lime-700 px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1"
+                                >
                                     <span>BOOK NOW</span>
                                     <CheckCircle size={24} />
                                 </button>

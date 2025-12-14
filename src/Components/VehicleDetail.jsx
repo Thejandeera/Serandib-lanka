@@ -11,7 +11,7 @@ const VehicleDetail = () => {
 
     const handleWhatsAppBooking = () => {
         const message = encodeURIComponent(`Hi! I'm interested in booking the "${vehicleData.title}". Can you provide more details?`);
-        window.open(`https://wa.me/94718860959?text=${message}`, '_blank');
+        window.open(`https://wa.me/94704678737?text=${message}`, '_blank');
     };
 
     return (
