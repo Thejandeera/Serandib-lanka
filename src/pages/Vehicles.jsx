@@ -252,9 +252,7 @@ const Vehicles = () => {
                                                             className="w-full h-full object-cover rounded-t-2xl sm:rounded-t-3xl transform group-hover:scale-110 transition-transform duration-700"
                                                         />
                                                         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                                                        <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg">
-                                                            <span className="font-bold text-blue-600 text-xs">{vehicle.price}<span className="text-gray-500">/km</span></span>
-                                                        </div>
+
                                                     </div>
 
                                                     {/* Content Section */}

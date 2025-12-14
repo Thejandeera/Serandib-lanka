@@ -10,7 +10,7 @@ const VehicleDetail = () => {
     const vehicleData = vehiclesData.find(vehicle => vehicle.id === parseInt(id)) || vehiclesData[0];
 
     const handleWhatsAppBooking = () => {
-        const message = encodeURIComponent(`Hi! I'm interested in booking the "${vehicleData.title}" (${vehicleData.price}/km). Can you provide more details?`);
+        const message = encodeURIComponent(`Hi! I'm interested in booking the "${vehicleData.title}". Can you provide more details?`);
         window.open(`https://wa.me/94718860959?text=${message}`, '_blank');
     };
 
@@ -180,9 +180,7 @@ const VehicleDetail = () => {
                                 <div className="lg:sticky lg:top-36 backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
                                     <div className="flex justify-between items-end mb-6 sm:mb-8">
                                         <div>
-                                            <span className="text-gray-500 text-xs sm:text-sm">Starting from</span>
-                                            <div className="text-3xl sm:text-4xl font-extrabold text-gray-900">{vehicleData.price}</div>
-                                            <span className="text-gray-500 text-xs sm:text-sm">per kilometer</span>
+                                            <span className="text-gray-500 text-xs sm:text-sm">Contact us for pricing</span>
                                         </div>
                                         <div className="bg-blue-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold shadow-lg">
                                             Best Value

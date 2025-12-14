@@ -5,7 +5,7 @@ export const vehiclesData = [
         title: "AC Van",
         type: "Van",
         rating: 5,
-        price: "US$10",
+
         badge: "Premium",
         desc: "Spacious AC van perfect for family trips. Enjoy a comfortable journey with ample legroom and luggage space.",
         seats: "8-10",
@@ -17,7 +17,7 @@ export const vehiclesData = [
         title: "Mini Van",
         type: "Van",
         rating: 5,
-        price: "US$10",
+
         badge: "Standard",
         desc: "Comfortable mini van for small groups. Ideal for city tours and short excursions.",
         seats: "4-5",
@@ -29,7 +29,7 @@ export const vehiclesData = [
         title: "Sedan Car",
         type: "Car",
         rating: 5,
-        price: "US$10",
+
         badge: "Luxury",
         desc: "Premium sedan for a smooth couple's ride. Experience luxury and style on your travels.",
         seats: "2-4",
@@ -41,7 +41,7 @@ export const vehiclesData = [
         title: "Luxery Bus",
         type: "Bus",
         rating: 4.5,
-        price: "US$10",
+
         badge: "Large Group",
         desc: "Fully AC bus for large tour groups. Safe and reliable transportation for big adventures.",
         seats: "10-50",
@@ -53,7 +53,7 @@ export const vehiclesData = [
         title: "Luxury SUV",
         type: "Car",
         rating: 5,
-        price: "US$15",
+
         badge: "Off-Road",
         desc: "High-end SUV for rugged terrain and comfort. Perfect for exploring off-the-beaten-path locations.",
         seats: "2-4",
@@ -65,7 +65,7 @@ export const vehiclesData = [
         title: "Motor Bike",
         type: "Bike",
         rating: 4.5,
-        price: "US$5",
+
         badge: "Budget",
         desc: "Fuel-efficient motor bike ideal for solo travelers and quick city rides.",
         seats: "1-2",
@@ -77,7 +77,7 @@ export const vehiclesData = [
         title: "Tuk Tuk",
         type: "Three Wheeler",
         rating: 4.5,
-        price: "US$6",
+
         badge: "Local Experience",
         desc: "Iconic tuk tuk for short-distance travel and an authentic local experience.",
         seats: "2-3",
@@ -89,7 +89,7 @@ export const vehiclesData = [
         title: "Mini Bus",
         type: "Bus",
         rating: 4.5,
-        price: "US$12",
+
         badge: "Group Travel",
         desc: "Comfortable mini bus suitable for medium-sized groups and day tours.",
         seats: "12-20",
