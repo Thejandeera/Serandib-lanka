@@ -245,7 +245,10 @@ const Vehicles = () => {
                                             >
                                                 <div className="relative h-full flex flex-col rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-white/40 border-2 border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                                                     {/* Image Section */}
-                                                    <div className="relative h-48 sm:h-56 bg-gradient-to-br from-blue-100 to-cyan-100 flex-shrink-0">
+                                                    <div
+                                                        className="relative h-48 sm:h-56 bg-gradient-to-br from-blue-100 to-cyan-100 flex-shrink-0 cursor-pointer"
+                                                        onClick={() => handleViewMore(vehicle.id)}
+                                                    >
                                                         <img
                                                             src={vehicle.image}
                                                             alt={vehicle.title}
@@ -313,6 +316,7 @@ const Vehicles = () => {
                     </div>
                 </div>
             </section>
+            <Footer />
         </div>
     );
 };

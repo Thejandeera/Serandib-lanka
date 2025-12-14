@@ -18,7 +18,7 @@ const Tours = () => {
         rating: 0
     });
 
-    const categories = ["Pickup", "1 Day Tours", "2 Day Tours", "More than 2 Day Tours"];
+    const categories = ["Pickup"];
 
     // Reset visible count when filters change
     useEffect(() => {
@@ -185,32 +185,7 @@ const Tours = () => {
                                 </div>
 
                                 <div className="space-y-8 bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-lg border-2 border-gray-200">
-                                    {/* Category Filter */}
-                                    <div>
-                                        <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                            <Filter size={18} className="text-lime-600" /> Categories
-                                        </h3>
-                                        <div className="space-y-2">
-                                            {categories.map(cat => (
-                                                <label key={cat} className="flex items-center gap-3 cursor-pointer group">
-                                                    <div className="relative flex items-center">
-                                                        <input
-                                                            type="checkbox"
-                                                            checked={filters.categories.includes(cat)}
-                                                            onChange={() => handleCategoryChange(cat)}
-                                                            className="peer h-5 w-5 cursor-pointer appearance-none rounded border border-gray-300 shadow-sm checked:border-lime-500 checked:bg-lime-500 hover:border-lime-400 transition-all"
-                                                        />
-                                                        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 peer-checked:opacity-100 pointer-events-none">
-                                                            <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M1 4L3.5 6.5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-                                                    <span className="text-gray-700 group-hover:text-lime-600 transition-colors">{cat}</span>
-                                                </label>
-                                            ))}
-                                        </div>
-                                    </div>
+
 
                                     {/* Rating Filter */}
                                     <div className="pt-6 border-t border-gray-100">
