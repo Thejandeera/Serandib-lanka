@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
 import { Users, Globe, Briefcase, Map } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Counter = ({ value }) => {
     const ref = useRef(null);
@@ -28,6 +29,7 @@ const Counter = ({ value }) => {
 };
 
 const WhoAreWe = () => {
+    const navigate = useNavigate();
     // Animation Variants
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -59,10 +61,10 @@ const WhoAreWe = () => {
     };
 
     const stats = [
-        { value: "25+", label: "Years of Experience" },
-        { value: "90", label: "Team Members" },
-        { value: "160", label: "Destinations Covered" },
-        { value: "14k+", label: "Trips Launched" },
+        { value: "5+", label: "Years of Experience" },
+        { value: "10", label: "Team Members" },
+        { value: "40", label: "Destinations Covered" },
+        { value: "600+", label: "Trips Launched" },
     ];
 
     return (
@@ -99,7 +101,7 @@ const WhoAreWe = () => {
                         Who We Are
                     </span>
                     <h2 className="text-4xl md:text-5xl font-extrabold text-black">
-                        Crafting Unforgettable <br /> Journeys Since 2025
+                        Crafting Unforgettable <br /> Journeys Since 2020
                     </h2>
                 </motion.div>
 
@@ -138,7 +140,7 @@ const WhoAreWe = () => {
                         viewport={{ once: true }}
                     >
                         <motion.p variants={itemVariants} className="text-gray-600 text-lg leading-relaxed">
-                            Serandib Lanka Tours started as a passion project in 1998. Our founders had just explored the hidden corners of Sri Lanka and were ready for their next adventure: sharing these wonders with the world. They had experience in hospitality and a deep business acumen.
+                            Serandib Lanka Tours started as a passion project in 2020. Our founders had just explored the hidden corners of Sri Lanka and were ready for their next adventure: sharing these wonders with the world. They had experience in hospitality and a deep business acumen.
                         </motion.p>
 
                         <motion.p variants={itemVariants} className="text-gray-600 text-lg leading-relaxed">
@@ -146,7 +148,10 @@ const WhoAreWe = () => {
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="pt-4">
-                            <button className="text-black font-bold border-b-2 border-lime-400 hover:text-lime-700 hover:border-lime-600 transition-all">
+                            <button
+                                onClick={() => navigate('/service')}
+                                className="text-black font-bold border-b-2 border-lime-400 hover:text-lime-700 hover:border-lime-600 transition-all"
+                            >
                                 Read Our Full Story
                             </button>
                         </motion.div>
