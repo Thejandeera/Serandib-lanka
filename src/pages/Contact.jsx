@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import emailjs from '@emailjs/browser'; // Import EmailJS
+import emailjs from '@emailjs/browser';
+import { Toaster, toast } from 'react-hot-toast';
 import {
     Phone,
     Mail,
@@ -70,23 +71,33 @@ const Contact = () => {
         const TEMPLATE_ID = 'template_77am54j';
         const PUBLIC_KEY = 'wlEIlfE10FLHj38HW';
 
-        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+        const formData = new FormData(form.current);
+        const templateParams = {
+            user_name: formData.get('user_name') || 'not-filled',
+            user_email: formData.get('user_email') || 'not-filled',
+            contact_number: formData.get('contact_number') || 'not-filled',
+            subject: formData.get('subject') || 'not-filled',
+            message: formData.get('message') || 'not-filled',
+        };
+
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
             .then((result) => {
                 console.log(result.text);
                 setFormStatus('success');
-                alert("Message sent successfully!");
+                toast.success("Message sent successfully!");
                 setFormStatus('idle');
                 e.target.reset(); // Clear form after success
             }, (error) => {
                 console.log(error.text);
                 setFormStatus('error');
-                alert("Failed to send message. Please try again.");
+                toast.error("Failed to send message. Please try again.");
                 setFormStatus('idle');
             });
     };
 
     return (
         <div className="min-h-screen bg-white relative overflow-hidden pt-16 sm:pt-20 md:pt-24">
+            <Toaster position="top-center" reverseOrder={false} />
 
             {/* ---- Background Elements ---- */}
             <div className="absolute top-0 left-0 w-full h-full z-0 opacity-5 pointer-events-none">
