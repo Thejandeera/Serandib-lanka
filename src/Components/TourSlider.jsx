@@ -156,15 +156,14 @@ const TourSlider = () => {
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
 
-                      {/* Price Tag */}
+                      {/* Category Tag */}
                       <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
-                        <span className="font-bold text-black text-lg">{tour.price}</span>
-                        <span className="text-gray-600 text-sm ml-1">/person</span>
+                        <span className="font-bold text-lime-600 text-sm">{tour.category}</span>
                       </div>
 
                       {/* Duration Tag */}
                       <div className="absolute bottom-4 left-4 bg-lime-500 text-white px-3 py-1.5 rounded-full text-sm font-semibold">
-                        {tour.days}
+                        {tour.category === 'Pickup' ? 'Transfer' : (tour.nights === 0 ? '1 Day' : `${tour.nights} Nights`)}
                       </div>
 
                       {/* Hover Button */}
@@ -193,11 +192,12 @@ const TourSlider = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="flex">
-                            {[...Array(tour.rating)].map((_, i) => (
+                            {[...Array(Math.floor(tour.rating))].map((_, i) => (
                               <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
                             ))}
+                            {tour.rating % 1 !== 0 && <Star size={18} className="fill-yellow-400 text-yellow-400 opacity-50" />}
                           </div>
-                          <span className="text-gray-500 text-sm font-medium">({tour.rating}.0)</span>
+                          <span className="text-gray-500 text-sm font-medium">({tour.rating})</span>
                         </div>
 
                         <span className="text-gray-500 text-sm font-medium group-hover/card:text-black transition-colors">
