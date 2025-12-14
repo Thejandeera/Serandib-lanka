@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import emailjs from '@emailjs/browser';
+import { Toaster, toast } from 'react-hot-toast';
 import {
     Phone,
     Mail,
@@ -29,17 +31,18 @@ const customIcon = new L.Icon({
 });
 
 const Contact = () => {
-    // Single Location Data (Main Office from your previous map code)
+    // Single Location Data
     const location = {
         position: [6.927611, 79.920194],
         title: "Serandib Lanka Main Office",
-        address: "1/4 , Shanthi Mawatha , Himbutana , Colombo , Sri lanka",
-        phone: "+94 71 886 0959",
-        email: "zenvixor.info@gmail.com",
-        whatsapp: "94718860959" // Format for API
+        address: " Colombo , Sri lanka",
+        phone: "+94 70 467 8737",
+        email: "serandiblankatours.info@gmail.com",
+        whatsapp: "94704678737"
     };
 
     const [formStatus, setFormStatus] = useState('idle');
+    const form = useRef(); // Reference to the form element
 
     // Animation Variants
     const containerVariants = {
@@ -62,16 +65,39 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormStatus('sending');
-        // Simulate sending
-        setTimeout(() => {
-            setFormStatus('success');
-            alert("Message sent successfully!");
-            setFormStatus('idle');
-        }, 1500);
+
+        // REPLACE THESE WITH YOUR ACTUAL IDS FROM EMAILJS DASHBOARD
+        const SERVICE_ID = 'service_jm0qbe4';
+        const TEMPLATE_ID = 'template_77am54j';
+        const PUBLIC_KEY = 'wlEIlfE10FLHj38HW';
+
+        const formData = new FormData(form.current);
+        const templateParams = {
+            user_name: formData.get('user_name') || 'not-filled',
+            user_email: formData.get('user_email') || 'not-filled',
+            contact_number: formData.get('contact_number') || 'not-filled',
+            subject: formData.get('subject') || 'not-filled',
+            message: formData.get('message') || 'not-filled',
+        };
+
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+            .then((result) => {
+                console.log(result.text);
+                setFormStatus('success');
+                toast.success("Message sent successfully!");
+                setFormStatus('idle');
+                e.target.reset(); // Clear form after success
+            }, (error) => {
+                console.log(error.text);
+                setFormStatus('error');
+                toast.error("Failed to send message. Please try again.");
+                setFormStatus('idle');
+            });
     };
 
     return (
         <div className="min-h-screen bg-white relative overflow-hidden pt-16 sm:pt-20 md:pt-24">
+            <Toaster position="top-center" reverseOrder={false} />
 
             {/* ---- Background Elements ---- */}
             <div className="absolute top-0 left-0 w-full h-full z-0 opacity-5 pointer-events-none">
@@ -234,12 +260,13 @@ const Contact = () => {
                                     <p className="text-gray-600">Fill out the form below and we'll get back to you shortly.</p>
                                 </div>
 
-                                <form onSubmit={handleSubmit} className="space-y-6">
+                                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
                                             <label className="text-sm font-bold text-gray-700 ml-1">Your Name</label>
                                             <input
                                                 type="text"
+                                                name="user_name"
                                                 placeholder="John Doe"
                                                 className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-lime-500 focus:ring-2 focus:ring-lime-200 transition-all"
                                                 required
@@ -249,6 +276,7 @@ const Contact = () => {
                                             <label className="text-sm font-bold text-gray-700 ml-1">Email Address</label>
                                             <input
                                                 type="email"
+                                                name="user_email"
                                                 placeholder="john@example.com"
                                                 className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-lime-500 focus:ring-2 focus:ring-lime-200 transition-all"
                                                 required
@@ -261,17 +289,21 @@ const Contact = () => {
                                             <label className="text-sm font-bold text-gray-700 ml-1">Phone Number</label>
                                             <input
                                                 type="tel"
+                                                name="contact_number"
                                                 placeholder="+94 77 ..."
                                                 className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-lime-500 focus:ring-2 focus:ring-lime-200 transition-all"
                                             />
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-sm font-bold text-gray-700 ml-1">Subject</label>
-                                            <select className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-lime-500 focus:ring-2 focus:ring-lime-200 transition-all appearance-none cursor-pointer">
-                                                <option>General Inquiry</option>
-                                                <option>Tour Package Booking</option>
-                                                <option>Vehicle Rental</option>
-                                                <option>Feedback</option>
+                                            <select
+                                                name="subject"
+                                                className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-lime-500 focus:ring-2 focus:ring-lime-200 transition-all appearance-none cursor-pointer"
+                                            >
+                                                <option value="General Inquiry">General Inquiry</option>
+                                                <option value="Tour Package Booking">Tour Package Booking</option>
+                                                <option value="Vehicle Rental">Vehicle Rental</option>
+                                                <option value="Feedback">Feedback</option>
                                             </select>
                                         </div>
                                     </div>
@@ -279,6 +311,7 @@ const Contact = () => {
                                     <div className="space-y-2">
                                         <label className="text-sm font-bold text-gray-700 ml-1">Message</label>
                                         <textarea
+                                            name="message"
                                             rows="5"
                                             placeholder="How can we help you?"
                                             className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-lime-500 focus:ring-2 focus:ring-lime-200 transition-all resize-none"
@@ -334,7 +367,7 @@ const Contact = () => {
                             className="h-full w-full z-0"
                         >
                             <TileLayer
-                                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                                 className="map-tiles"
                             />

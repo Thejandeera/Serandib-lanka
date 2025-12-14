@@ -172,9 +172,9 @@ const VehicleCollection = () => {
                         </motion.div>
                       </div>
                       {/* Content Section */}
-                      <div className="px-2 whitespace-normal">
+                      <div className="px-2 whitespace-normal text-center">
                         {/* Badge */}
-                        <div className="flex items-center gap-2 text-blue-600 mb-3">
+                        <div className="flex items-center justify-center gap-2 text-blue-600 mb-3">
                           <Icon size={18} className="text-blue-500" />
                           <span className="text-sm font-semibold tracking-wide">{vehicle.badge}</span>
                         </div>
@@ -184,21 +184,14 @@ const VehicleCollection = () => {
                           {vehicle.title}
                         </h3>
 
-                        {/* Footer: Rating & Price */}
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2">
-                            <span className="text-gray-500 text-sm font-medium">Avg. Ratings of</span>
-                            <div className="flex">
-                              {[...Array(Math.floor(vehicle.rating))].map((_, i) => (
-                                <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
-                              ))}
-                              {vehicle.rating % 1 !== 0 && <Star size={16} className="fill-yellow-400 text-yellow-400 opacity-50" />}
-                            </div>
-                          </div>
-
-                          <div className="text-right">
-                            <span className="text-gray-500 text-sm">From</span>
-                            <span className="font-bold text-black text-lg ml-1">{vehicle.price}</span>
+                        {/* Footer: Rating */}
+                        <div className="flex items-center justify-center gap-2">
+                          <span className="text-gray-500 text-sm font-medium">Avg. Ratings of</span>
+                          <div className="flex">
+                            {[...Array(Math.floor(vehicle.rating))].map((_, i) => (
+                              <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                            ))}
+                            {vehicle.rating % 1 !== 0 && <Star size={16} className="fill-yellow-400 text-yellow-400 opacity-50" />}
                           </div>
                         </div>
                       </div>

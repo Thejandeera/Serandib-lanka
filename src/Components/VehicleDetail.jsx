@@ -10,12 +10,12 @@ const VehicleDetail = () => {
     const vehicleData = vehiclesData.find(vehicle => vehicle.id === parseInt(id)) || vehiclesData[0];
 
     const handleWhatsAppBooking = () => {
-        const message = encodeURIComponent(`Hi! I'm interested in booking the "${vehicleData.title}" (${vehicleData.price}/km). Can you provide more details?`);
+        const message = encodeURIComponent(`Hi! I'm interested in booking the "${vehicleData.title}". Can you provide more details?`);
         window.open(`https://wa.me/94718860959?text=${message}`, '_blank');
     };
 
     return (
-        <div className="min-h-screen bg-white relative overflow-hidden">
+        <div className="min-h-screen bg-white relative overflow-clip">
             {/* Textured Background */}
             <div className="absolute top-0 left-0 w-full h-full z-0 opacity-5 pointer-events-none">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +87,7 @@ const VehicleDetail = () => {
                             {/* Main Content - Scrollable */}
                             <div className="lg:col-span-2 space-y-6 sm:space-y-8">
                                 {/* Description Card */}
-                                <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                <div className="backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
                                     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
                                         <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-blue-500 rounded-full"></div>
                                         About This Vehicle
@@ -98,7 +98,7 @@ const VehicleDetail = () => {
                                 </div>
 
                                 {/* Specifications */}
-                                <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                <div className="backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
                                     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
                                         <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-blue-500 rounded-full"></div>
                                         Specifications
@@ -123,7 +123,7 @@ const VehicleDetail = () => {
                                 </div>
 
                                 {/* Features */}
-                                <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                <div className="backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
                                     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
                                         <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-blue-500 rounded-full"></div>
                                         Premium Features
@@ -151,7 +151,7 @@ const VehicleDetail = () => {
                                 </div>
 
                                 {/* Trust Badges */}
-                                <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                <div className="backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
                                     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
                                         <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-blue-500 rounded-full"></div>
                                         Why Choose Us
@@ -177,12 +177,10 @@ const VehicleDetail = () => {
 
                             {/* Booking Sidebar - Sticky on Desktop */}
                             <div className="lg:col-span-1">
-                                <div className="lg:sticky lg:top-24 backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
+                                <div className="lg:sticky lg:top-36 backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
                                     <div className="flex justify-between items-end mb-6 sm:mb-8">
                                         <div>
-                                            <span className="text-gray-500 text-xs sm:text-sm">Starting from</span>
-                                            <div className="text-3xl sm:text-4xl font-extrabold text-gray-900">{vehicleData.price}</div>
-                                            <span className="text-gray-500 text-xs sm:text-sm">per kilometer</span>
+                                            <span className="text-gray-500 text-xs sm:text-sm">Contact us for pricing</span>
                                         </div>
                                         <div className="bg-blue-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-bold shadow-lg">
                                             Best Value

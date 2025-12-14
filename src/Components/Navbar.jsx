@@ -77,8 +77,27 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* ---- RIGHT: Spacer ---- */}
-          <div className="hidden lg:block w-32 md:w-40 text-right"></div>
+          {/* ---- RIGHT: Social Icons ---- */}
+          <div className="hidden lg:flex w-32 md:w-40 justify-center items-center space-x-4">
+            <a
+              href="https://web.facebook.com/people/Serandib-Tours-Sri-Lanka/61574841951655/?mibextid=wwXIfr&rdid=f52gYkgxC4cFUbrp&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1BfVpfw9pd%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              title="Facebook"
+            >
+              <img src="/images/facebook.svg" alt="Facebook" className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@serandiblankatour?_r=1&_t=ZS-92BEn9ZsAon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              title="TikTok"
+            >
+              <img src="/images/tiktok.svg" alt="TikTok" className="w-6 h-6" />
+            </a>
+          </div>
 
           {/* ---- MOBILE MENU BUTTON ---- */}
           <div className="lg:hidden z-50">
@@ -103,6 +122,28 @@ const Navbar = () => {
             className="absolute top-0 left-0 w-full bg-white/95 backdrop-blur-xl z-40 flex flex-col justify-center items-center"
           >
             <div className="flex flex-col items-center space-y-6">
+
+              {/* Mobile Social Icons */}
+              <div className="flex items-center space-x-6 mb-4">
+                <a
+                  href="https://web.facebook.com/people/Serandib-Tours-Sri-Lanka/61574841951655/?mibextid=wwXIfr&rdid=f52gYkgxC4cFUbrp&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F1BfVpfw9pd%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity p-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <img src="/images/facebook.svg" alt="Facebook" className="w-8 h-8" />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@serandiblankatour?_r=1&_t=ZS-92BEn9ZsAon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity p-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <img src="/images/tiktok.svg" alt="TikTok" className="w-8 h-8" />
+                </a>
+              </div>
               {links.map((link, i) => (
                 <motion.div key={link.name} custom={i} variants={linkVariants}>
                   <Link

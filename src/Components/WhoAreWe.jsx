@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Counter = ({ value }) => {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-50px" });
+    const isInView = useInView(ref, { once: true });
 
     // Parse the numeric part and the suffix
     const numericValue = parseInt(value.replace(/\D/g, '')) || 0;
@@ -149,7 +149,7 @@ const WhoAreWe = () => {
 
                         <motion.div variants={itemVariants} className="pt-4">
                             <button
-                                onClick={() => navigate('/service')}
+                                onClick={() => navigate('/services')}
                                 className="text-black font-bold border-b-2 border-lime-400 hover:text-lime-700 hover:border-lime-600 transition-all"
                             >
                                 Read Our Full Story
