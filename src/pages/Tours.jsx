@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { MapPin, Star, ChevronRight, Sparkles, Filter, X, Calendar, Clock, Plane } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
@@ -21,7 +21,7 @@ const Tours = () => {
     const categories = ["Pickup", "1 Day Tours", "2 Day Tours", "More than 2 Day Tours"];
 
     // Reset visible count when filters change
-    React.useEffect(() => {
+    useEffect(() => {
         setVisibleCount(6);
     }, [filters, searchQuery, selectedCategory]);
 
