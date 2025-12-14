@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { Target, Eye, Heart, Globe, Shield, Users, Sparkles, Award, CheckCircle } from 'lucide-react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 
 const About = () => {
+    const navigate = useNavigate();
     // Animation Variants
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -37,10 +39,10 @@ const About = () => {
 
     // Stats Data (Matching your reference image)
     const stats = [
-        { value: "25+", label: "Years of Experience" },
-        { value: "90", label: "Team Members" },
-        { value: "160", label: "Destinations Covered" },
-        { value: "14k+", label: "Trips Launched" },
+        { value: "5+", label: "Years of Experience" },
+        { value: "10", label: "Team Members" },
+        { value: "40+", label: "Destinations Covered" },
+        { value: "600+", label: "Trips Launched" },
     ];
 
     // Core Values Data
@@ -108,7 +110,7 @@ const About = () => {
                         Discover <span className="text-lime-300">Serandib</span>
                     </h1>
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl drop-shadow-md px-4">
-                        More than just a travel agency. We are your gateway to the authentic wonders of Sri Lanka, crafting memories since 1998.
+                        More than just a travel agency. We are your gateway to the authentic wonders of Sri Lanka, crafting memories since 2020.
                     </p>
                 </div>
             </section>
@@ -141,7 +143,7 @@ const About = () => {
                                         <Award className="text-lime-600" size={32} />
                                     </div>
                                     <div>
-                                        <div className="text-2xl font-bold text-gray-900">#1 Choice</div>
+                                        <div className="text-2xl font-bold text-gray-900">#best-Choice</div>
                                         <div className="text-sm text-gray-600">For Sri Lanka Tours</div>
                                     </div>
                                 </div>
@@ -324,7 +326,10 @@ const About = () => {
                             <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-3xl mx-auto leading-relaxed">
                                 Join us for an adventure of a lifetime. Let us guide you through the wonders of Sri Lanka.
                             </p>
-                            <button className="inline-flex items-center gap-3 bg-lime-500 text-black px-10 py-5 rounded-full font-bold text-lg hover:bg-lime-400 transition-all shadow-xl hover:shadow-lime-500/20 hover:-translate-y-1">
+                            <button
+                                onClick={() => navigate('/tours')}
+                                className="inline-flex items-center gap-3 bg-lime-500 text-black px-10 py-5 rounded-full font-bold text-lg hover:bg-lime-400 transition-all shadow-xl hover:shadow-lime-500/20 hover:-translate-y-1"
+                            >
                                 <span>Plan My Trip</span>
                                 <CheckCircle size={24} />
                             </button>
