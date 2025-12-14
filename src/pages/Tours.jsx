@@ -11,6 +11,7 @@ const Tours = () => {
 
     // Filter State
     const [selectedCategory, setSelectedCategory] = useState('All');
+    const [searchQuery, setSearchQuery] = useState('');
     const [filters, setFilters] = useState({
         categories: [],
         rating: 0
@@ -45,6 +46,18 @@ const Tours = () => {
     // Filtering Logic
     const filteredTours = useMemo(() => {
         return toursData.filter(tour => {
+            // Search Filter
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                const matchesTitle = tour.title.toLowerCase().includes(query);
+                const matchesLocation = tour.location.toLowerCase().includes(query);
+                const matchesDestinations = tour.destinations && tour.destinations.some(d => d.name.toLowerCase().includes(query));
+
+                if (!matchesTitle && !matchesLocation && !matchesDestinations) {
+                    return false;
+                }
+            }
+
             // Category Filter
             if (filters.categories.length > 0 && !filters.categories.includes(tour.category)) {
                 return false;
@@ -55,7 +68,7 @@ const Tours = () => {
             }
             return true;
         });
-    }, [filters]);
+    }, [filters, searchQuery]);
 
     return (
         <div className="min-h-screen bg-white relative overflow-clip pt-16 sm:pt-20 md:pt-24">
@@ -102,20 +115,39 @@ const Tours = () => {
             <section className="py-12 sm:py-16">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
-                    {/* Top Category Tabs */}
-                    <div className="flex flex-wrap justify-center gap-3 mb-12">
-                        {['All', ...categories].map(cat => (
-                            <button
-                                key={cat}
-                                onClick={() => handleTopCategoryClick(cat)}
-                                className={`px-6 py-2 rounded-full font-bold text-sm sm:text-base transition-all duration-300 border-2 ${selectedCategory === cat
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
+                        {/* Top Category Tabs */}
+                        <div className="flex flex-wrap justify-center md:justify-start gap-3 flex-1">
+                            {['All', ...categories].map(cat => (
+                                <button
+                                    key={cat}
+                                    onClick={() => handleTopCategoryClick(cat)}
+                                    className={`px-4 sm:px-6 py-2 rounded-full font-bold text-sm sm:text-base transition-all duration-300 border-2 ${selectedCategory === cat
                                         ? 'bg-lime-600 text-white border-lime-600 shadow-lg scale-105'
                                         : 'bg-white text-gray-600 border-gray-200 hover:border-lime-500 hover:text-lime-600'
-                                    }`}
-                            >
-                                {cat}
-                            </button>
-                        ))}
+                                        }`}
+                                >
+                                    {cat}
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Search Bar */}
+                        <div className="w-full md:w-auto relative">
+                            <input
+                                type="text"
+                                placeholder="Search tours..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="w-full md:w-80 pl-10 pr-4 py-2 rounded-full border-2 border-gray-200 focus:border-lime-500 focus:outline-none transition-colors"
+                            />
+                            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Mobile Filter Toggle */}
@@ -174,6 +206,62 @@ const Tours = () => {
                                         </div>
                                     </div>
 
+                                    {/* Rating Filter */}
+                                    <div className="pt-6 border-t border-gray-100">
+                                        <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                            <Star size={18} className="text-lime-600" /> Rating
+                                        </h3>
+                                        <div className="space-y-2">
+                                            {[5, 4, 3].map((rating) => (
+                                                <label key={rating} className="flex items-center gap-3 cursor-pointer group">
+                                                    <div className="relative flex items-center">
+                                                        <input
+                                                            type="radio"
+                                                            name="rating"
+                                                            checked={filters.rating === rating}
+                                                            onChange={() => setFilters(prev => ({ ...prev, rating }))}
+                                                            className="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-gray-300 shadow-sm checked:border-lime-500 checked:bg-lime-500 hover:border-lime-400 transition-all"
+                                                        />
+                                                        <div className="absolute inset-0 rounded-full ring-2 ring-lime-500 ring-opacity-0 peer-checked:ring-opacity-50 transition-all"></div>
+                                                        <div className="absolute inset-0 flex items-center justify-center">
+                                                            <div className="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex items-center gap-2 group-hover:text-lime-600 transition-colors">
+                                                        <div className="flex">
+                                                            {[...Array(5)].map((_, i) => (
+                                                                <Star
+                                                                    key={i}
+                                                                    size={14}
+                                                                    className={i < rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}
+                                                                />
+                                                            ))}
+                                                        </div>
+                                                        <span className="text-sm text-gray-600 ml-1">
+                                                            {rating === 5 ? '5 Stars' : `${rating} Stars & Up`}
+                                                        </span>
+                                                    </div>
+                                                </label>
+                                            ))}
+                                            <label className="flex items-center gap-3 cursor-pointer group">
+                                                <div className="relative flex items-center">
+                                                    <input
+                                                        type="radio"
+                                                        name="rating"
+                                                        checked={filters.rating === 0}
+                                                        onChange={() => setFilters(prev => ({ ...prev, rating: 0 }))}
+                                                        className="peer h-5 w-5 cursor-pointer appearance-none rounded-full border border-gray-300 shadow-sm checked:border-lime-500 checked:bg-lime-500 hover:border-lime-400 transition-all"
+                                                    />
+                                                    <div className="absolute inset-0 rounded-full ring-2 ring-lime-500 ring-opacity-0 peer-checked:ring-opacity-50 transition-all"></div>
+                                                    <div className="absolute inset-0 flex items-center justify-center">
+                                                        <div className="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                                                    </div>
+                                                </div>
+                                                <span className="text-gray-700 group-hover:text-lime-600 transition-colors">Any Rating</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
                                     {/* Mobile Apply Button */}
                                     <div className="lg:hidden mt-8">
                                         <button
@@ -201,7 +289,10 @@ const Tours = () => {
                                     >
                                         <div className="relative h-full flex flex-col rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-white/40 border-2 border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                                             {/* Image Section */}
-                                            <div className="relative h-56 sm:h-64 bg-gray-100 flex-shrink-0">
+                                            <div
+                                                className="relative h-56 sm:h-64 bg-gray-100 flex-shrink-0 cursor-pointer"
+                                                onClick={() => handleViewMore(tour.id)}
+                                            >
                                                 <img
                                                     src={tour.image}
                                                     alt={tour.title}

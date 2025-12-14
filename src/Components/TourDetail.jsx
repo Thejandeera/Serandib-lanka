@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, Clock, Star, CheckCircle, ArrowLeft, MessageCircle, Calendar, Users, Plane, Check } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 import { toursData } from '../data/toursData';
 
 const TourDetail = () => {
@@ -15,7 +16,7 @@ const TourDetail = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white relative overflow-hidden">
+        <div className="min-h-screen bg-white relative overflow-clip">
             {/* Textured Background */}
             <div className="absolute top-0 left-0 w-full h-full z-0 opacity-5 pointer-events-none">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +85,7 @@ const TourDetail = () => {
                             {/* Main Content - Scrollable */}
                             <div className="lg:col-span-2 space-y-6 sm:space-y-8">
                                 {/* Overview Card */}
-                                <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                <div className="backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
                                     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
                                         <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-lime-500 rounded-full"></div>
                                         Overview
@@ -95,7 +96,7 @@ const TourDetail = () => {
                                 </div>
 
                                 {tourData.category === "Pickup" ? (
-                                    <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                    <div className="backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
                                         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 flex items-center gap-2 sm:gap-3">
                                             <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-lime-500 rounded-full"></div>
                                             Transfer Details
@@ -117,14 +118,14 @@ const TourDetail = () => {
                                     </div>
                                 ) : (
                                     /* Destinations List */
-                                    <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                    <div className="backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
                                         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
                                             <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-lime-500 rounded-full"></div>
                                             Destinations & Highlights
                                         </h2>
                                         <div className="space-y-6">
                                             {tourData.destinations.map((dest, i) => (
-                                                <div key={i} className="flex flex-col sm:flex-row gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/80 hover:shadow-md transition-all">
+                                                <div key={i} className="flex flex-col sm:flex-row gap-4 p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border-2 border-gray-200 hover:shadow-md transition-all">
                                                     <div className="w-full sm:w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden">
                                                         <img
                                                             src={dest.image}
@@ -146,7 +147,7 @@ const TourDetail = () => {
                                 )}
 
                                 {/* Why Choose Us (Highlights) */}
-                                <div className="backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
+                                <div className="backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-xl">
                                     <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
                                         <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-lime-500 rounded-full"></div>
                                         {tourData.category === 'Pickup' ? 'Service Features' : 'Tour Inclusions'}
@@ -163,7 +164,7 @@ const TourDetail = () => {
                                         ].map((item, i) => (
                                             <div
                                                 key={i}
-                                                className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-white/80 hover:border-lime-300 transition-all"
+                                                className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl border-2 border-gray-200 hover:border-lime-300 transition-all"
                                             >
                                                 <CheckCircle size={18} className="text-lime-600 flex-shrink-0 sm:w-5 sm:h-5" />
                                                 <span className="text-xs sm:text-sm md:text-base text-gray-700 font-medium">{item}</span>
@@ -175,7 +176,7 @@ const TourDetail = () => {
 
                             {/* Booking Sidebar - Sticky on Desktop */}
                             <div className="lg:col-span-1">
-                                <div className="lg:sticky lg:top-36 backdrop-blur-xl bg-white/60 border border-white/80 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
+                                <div className="lg:sticky lg:top-36 backdrop-blur-xl bg-white/60 border-2 border-gray-200 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 shadow-2xl">
                                     <div className="flex justify-between items-end mb-6">
                                         <div>
                                             <span className="text-gray-500 text-xs sm:text-sm">Contact us for</span>
@@ -219,6 +220,7 @@ const TourDetail = () => {
                     </div>
                 </section>
             </div>
+            <Footer />
         </div>
     );
 };
