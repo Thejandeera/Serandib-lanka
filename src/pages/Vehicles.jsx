@@ -145,7 +145,7 @@ const Vehicles = () => {
                                     </button>
                                 </div>
 
-                                <div className="space-y-8 bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-white/50">
+                                <div className="space-y-8 bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-lg border-2 border-gray-200">
                                     {/* Fuel Filter */}
                                     <div>
                                         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -221,7 +221,7 @@ const Vehicles = () => {
                             </div>
 
                             {displayedVehicles.length === 0 ? (
-                                <div className="text-center py-20 bg-gray-50 rounded-3xl border border-dashed border-gray-300">
+                                <div className="text-center py-20 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-300">
                                     <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-4">
                                         <Car size={32} className="text-gray-400" />
                                     </div>
@@ -243,7 +243,7 @@ const Vehicles = () => {
                                                 key={vehicle.id}
                                                 className="group relative h-full"
                                             >
-                                                <div className="relative h-full flex flex-col rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-white/40 border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                                                <div className="relative h-full flex flex-col rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-white/40 border-2 border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
                                                     {/* Image Section */}
                                                     <div className="relative h-48 sm:h-56 bg-gradient-to-br from-blue-100 to-cyan-100 flex-shrink-0">
                                                         <img
