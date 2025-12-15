@@ -1,5 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
+// Pages & Components
 import Navbar from './Components/Navbar';
 import Hero from './pages/Hero';
 import TourSlider from './Components/TourSlider';
@@ -16,6 +18,9 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import ScrollToTop from './Components/ScrollToTop';
 
+// Import the Snow Component
+import Snow from './Components/Snow';
+
 const Home = () => (
   <>
     <Navbar />
@@ -29,12 +34,17 @@ const Home = () => (
 
 const App = () => {
   return (
-    <div className="font-sans">
+    <div className="font-sans relative">
+
+      {/* Placing Snow here ensures it overlays everything 
+        but persists across route changes. 
+      */}
+      <Snow />
+
       <ScrollToTop />
+
       <Routes>
-
         <Route path="/" element={<Home />} />
-
 
         <Route path="/tours" element={<Tours />} />
         <Route path="/vehicles" element={<Vehicles />} />
@@ -42,7 +52,6 @@ const App = () => {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-
 
         <Route path="/tour/:id" element={<TourDetail />} />
         <Route path="/vehicle/:id" element={<VehicleDetail />} />
