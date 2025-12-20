@@ -1,7 +1,7 @@
 export const vehiclesData = [
     {
         id: 1,
-        image: "/images/vehicles/van.png",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766246349/van_k7aapj.png",
         title: "AC Van",
         type: "Van",
         rating: 5,
@@ -13,7 +13,7 @@ export const vehiclesData = [
     },
     {
         id: 2,
-        image: "/images/vehicles/mini-van.png",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766246239/mini-van_tddmxr.png",
         title: "Mini Van",
         type: "Van",
         rating: 5,
@@ -25,7 +25,7 @@ export const vehiclesData = [
     },
     {
         id: 3,
-        image: "/images/vehicles/car.png",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766246281/car_fvw4ua.png",
         title: "Sedan Car",
         type: "Car",
         rating: 5,
@@ -37,7 +37,7 @@ export const vehiclesData = [
     },
     {
         id: 4,
-        image: "/images/vehicles/luxery-bus.png",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766246301/luxery-bus_kwvngh.png",
         title: "Luxery Bus",
         type: "Bus",
         rating: 4.5,
@@ -49,7 +49,7 @@ export const vehiclesData = [
     },
     {
         id: 5,
-        image: "/images/vehicles/suv.png",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766246261/suv_ezheut.png",
         title: "Luxury SUV",
         type: "Car",
         rating: 5,
@@ -61,7 +61,7 @@ export const vehiclesData = [
     },
     {
         id: 6,
-        image: "/images/vehicles/motorbike.png",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766246062/motorbike_voh80w.png",
         title: "Motor Bike",
         type: "Bike",
         rating: 4.5,
@@ -73,7 +73,7 @@ export const vehiclesData = [
     },
     {
         id: 7,
-        image: "/images/vehicles/tuktuk.png",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766246299/tuktuk_kkibuy.png",
         title: "Tuk Tuk",
         type: "Three Wheeler",
         rating: 4.5,
@@ -85,7 +85,7 @@ export const vehiclesData = [
     },
     {
         id: 8,
-        image: "/images/vehicles/rosabus.png",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766246248/rosabus_ygvlvy.png",
         title: "Mini Bus",
         type: "Bus",
         rating: 4.5,
