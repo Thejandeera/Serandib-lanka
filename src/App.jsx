@@ -39,7 +39,7 @@ const App = () => {
       {/* Placing Snow here ensures it overlays everything 
         but persists across route changes. 
       */}
-      <Snow />
+      {/* <Snow /> */}
 
       <ScrollToTop />
 

@@ -76,13 +76,13 @@ const Hero = () => {
             variants={containerVariants}
           >
             <motion.div variants={imageFloatVariants('up')} className="w-24 h-24 rounded-full overflow-hidden border-2 border-white shadow-lg mb-8">
-              <img src="/images/hero/image4.jpg" alt="Travel" className="w-full h-full object-cover" />
+              <img src="https://res.cloudinary.com/dewiswmaa/image/upload/v1766247235/image4_bs00ve.jpg" alt="Travel" className="w-full h-full object-cover" />
             </motion.div>
             <motion.div variants={imageFloatVariants('up')} className="w-32 h-48 rounded-[30px] overflow-hidden border-4 border-white shadow-xl z-10 mx-[-10px]">
-              <img src="/images/hero/image1.jpg" alt="Travel" className="w-full h-full object-cover" />
+              <img src="https://res.cloudinary.com/dewiswmaa/image/upload/v1766247228/image1_bw7ujj.jpg" alt="Travel" className="w-full h-full object-cover" />
             </motion.div>
             <motion.div variants={imageFloatVariants('up')} className="w-24 h-24 rounded-full overflow-hidden border-2 border-white shadow-lg mb-8">
-              <img src="/images/hero/image2.jpg" alt="Travel" className="w-full h-full object-cover" />
+              <img src="https://res.cloudinary.com/dewiswmaa/image/upload/v1766247643/image2_b0aspx.jpg" alt="Travel" className="w-full h-full object-cover" />
             </motion.div>
           </motion.div>
 
@@ -93,10 +93,10 @@ const Hero = () => {
             variants={imageFloatVariants('left')}
           >
             <motion.div className="absolute top-0 left-4 w-48 h-96 rounded-[50px] overflow-hidden shadow-xl z-10" whileHover={{ scale: 1.02 }}>
-              <img src="/images/hero/image1.jpg" alt="Winter Hiker" className="w-full h-full object-cover" />
+              <img src="https://res.cloudinary.com/dewiswmaa/image/upload/v1766247228/image1_bw7ujj.jpg" alt="Winter Hiker" className="w-full h-full object-cover" />
             </motion.div>
             <motion.div className="absolute bottom-12 right-4 w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-lg z-20" whileHover={{ scale: 1.05 }}>
-              <img src="/images/hero/image2.jpg" alt="Coastal View" className="w-full h-full object-cover" />
+              <img src="https://res.cloudinary.com/dewiswmaa/image/upload/v1766247643/image2_b0aspx.jpg" alt="Coastal View" className="w-full h-full object-cover" />
             </motion.div>
           </motion.div>
 
@@ -181,10 +181,10 @@ const Hero = () => {
             variants={imageFloatVariants('right')}
           >
             <motion.div className="absolute top-8 right-4 w-48 h-96 rounded-[50px] overflow-hidden shadow-xl z-10" whileHover={{ scale: 1.02 }}>
-              <img src="/images/hero/image3.jpg" alt="Hiker Yellow Raincoat" className="w-full h-full object-cover" />
+              <img src="https://res.cloudinary.com/dewiswmaa/image/upload/v1766247644/image3_znsktq.jpg" alt="Hiker Yellow Raincoat" className="w-full h-full object-cover" />
             </motion.div>
             <motion.div className="absolute bottom-0 left-0 w-44 h-44 rounded-full overflow-hidden border-4 border-white shadow-lg z-20" whileHover={{ scale: 1.05 }}>
-              <img src="/images/hero/image4.jpg" alt="Sunset Water" className="w-full h-full object-cover" />
+              <img src="https://res.cloudinary.com/dewiswmaa/image/upload/v1766247235/image4_bs00ve.jpg" alt="Sunset Water" className="w-full h-full object-cover" />
             </motion.div>
           </motion.div>
 

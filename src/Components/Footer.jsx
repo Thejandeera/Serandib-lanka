@@ -57,7 +57,7 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="space-y-6">
             <Link to="/" className="block w-40">
               <img
-                src="/images/logo.png"
+                src="https://res.cloudinary.com/dewiswmaa/image/upload/v1766248059/logo_chpcnz.png"
                 alt="Serandib Lanka Tours"
                 className="w-full h-auto object-contain"
                 onError={(e) => {
