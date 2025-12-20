@@ -50,7 +50,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 z-50">
             <Link to="/" className="block w-32 md:w-40">
               <img
-                src="/images/logo.png"
+                src="https://res.cloudinary.com/dewiswmaa/image/upload/v1766248059/logo_chpcnz.png"
                 alt="Serandib Lanka Tours"
                 className="w-full h-auto object-contain"
                 onError={(e) => {

@@ -121,7 +121,7 @@ const WhoAreWe = () => {
                         <div className="absolute inset-0 overflow-hidden rounded-[40px] shadow-2xl z-10 rotate-0 hover:rotate-1 transition-transform duration-500 ease-out">
                             {/* Replace with your specific vertical image */}
                             <img
-                                src="/images/hero/image2.jpg"
+                                src="https://res.cloudinary.com/dewiswmaa/image/upload/v1766247643/image2_b0aspx.jpg"
                                 alt="Travel Experience"
                                 className="w-full h-full object-cover"
                             />

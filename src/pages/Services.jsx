@@ -64,28 +64,28 @@ const Services = () => {
             icon: MapPin,
             title: "Holiday Packages",
             description: "Experience the beauty of Sri Lanka with our carefully curated tour packages. Each journey is designed to create unforgettable memories, from ancient temples to pristine beaches. Our expert local guides ensure you discover hidden gems and experience authentic Sri Lankan culture.",
-            image: "/images/tours/sigiriya.png",
+            image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766247146/sigiriya_ffaw4h.png",
             position: "left"
         },
         {
             icon: Car,
             title: "Vehicle Rentals",
             description: "Travel in comfort and style with our diverse fleet of well-maintained vehicles. From luxury sedans to spacious buses, we have the perfect ride for your journey. All vehicles come with professional drivers who know every corner of the island.",
-            image: "/images/vehicles/van.png",
+            image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766246261/suv_ezheut.png",
             position: "right"
         },
         {
             icon: Hotel,
             title: "Hotel Bookings",
             description: "Rest in handpicked accommodations that blend comfort with authentic Sri Lankan hospitality. We partner with the finest hotels and resorts across the island, ensuring your stay is as memorable as your adventures. From boutique hotels to luxury beach resorts.",
-            image: "/images/hero/image2.jpg",
+            image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766247643/image2_b0aspx.jpg",
             position: "left"
         },
         {
             icon: Plane,
             title: "Airport Transfers",
             description: "Start and end your Sri Lankan adventure stress-free with our seamless airport transfer service. Our professional drivers will be waiting for you with a warm welcome, ensuring a comfortable journey to your destination, day or night.",
-            image: "/images/hero/image3.jpg",
+            image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766247644/image3_znsktq.jpg",
             position: "right"
         }
     ];
