@@ -90,8 +90,11 @@ const TourDetail = () => {
                                         <div className="w-1.5 sm:w-2 h-6 sm:h-8 bg-lime-500 rounded-full"></div>
                                         Overview
                                     </h2>
-                                    <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-                                        {tourData.desc} Enjoy a hassle-free journey with our premium service. We ensure your comfort and safety throughout the trip.
+                                    <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed whitespace-pre-line">
+                                        {tourData.desc}
+                                    </p>
+                                    <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mt-4">
+                                        Enjoy a hassle-free journey with our premium service. We ensure your comfort and safety throughout the trip.
                                     </p>
                                 </div>
 

@@ -3,596 +3,445 @@ export const toursData = [
 
     {
         id: 1,
-        category: "More than 2 Day Tours",
-        title: "Island Heritage & East Coast",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741282/01_zsdbjk.png",
-        location: "From Airport to Destinations",
+        category: "2 Day Tours",
+        title: "Colombo & Sigiriya",
+        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741321/3-sigiriya_ibxdln.png",
+        location: "Colombo / Sigiriya",
         rating: 5,
-        type: "Extended Tour",
-        desc: "Explore the rich history of the cultural triangle followed by relaxation on the pristine east coast beaches.",
-        destinations: [
-            { id: 301, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741307/1-negombo_odlfms.png" },
-            { id: 302, name: "Anuradhapura", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741277/2-anuradhapura_ebywlp.webp" },
-            { id: 303, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741321/3-sigiriya_ibxdln.png" },
-            { id: 304, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741277/4-kandy_textbf.webp" },
-            { id: 305, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741327/5-nuwaraeliya_fz6em7.png" },
-            { id: 306, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741314/6-yala_dmcbjo.webp" },
-            { id: 307, name: "Kalutara", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741321/7-kalutara_vesfgo.png" },
-            { id: 308, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741338/8-colombo_yaly18.png" }
-        ],
-        nights: 7,
+        type: "Multi-Day Tour",
+        desc: `Day 1: Colombo to Sigiriya
+
+Morning:
+Depart from Colombo and head towards Sigiriya, located approximately 170 km away.
+Enjoy a scenic drive through lush landscapes and picturesque villages.
+
+Afternoon:
+Arrive in Sigiriya and check into your chosen accommodation.
+Have a delicious lunch at a local restaurant to taste authentic Sri Lankan cuisine.
+
+Evening:
+Visit the Sigiriya Rock Fortress, a UNESCO World Heritage site. Climb to the top and be rewarded with breathtaking views of the surrounding area.
+Explore the beautifully landscaped Sigiriya Gardens, a marvel of ancient engineering.
+
+Day 2: Sigiriya Exploration
+
+Morning:
+Rise early to catch a mesmerizing sunrise over the Sigiriya Rock Fortress.
+Enjoy a hearty breakfast at your hotel.
+
+Mid-morning:
+Visit the nearby Dambulla Cave Temple, another UNESCO World Heritage site. Marvel at the ancient cave paintings and statues dating back to the 1st century BC.
+
+Lunch:
+Head back to Sigiriya for a delightful lunch at a local eatery.
+
+Afternoon:
+Embark on a jeep safari at Minneriya National Park. Witness herds of elephants and other wildlife against the stunning backdrop of the park’s reservoir.
+
+Evening:
+Return to Sigiriya and take a leisurely stroll around the village, interacting with the friendly locals and exploring their way of life.
+Enjoy a relaxing evening at your accommodation or indulge in optional activities like an Ayurvedic spa treatment.`,
         pickup: "Airport or Any Location",
-        drop: "Colombo"
+        nights: 1,
+        destinations: [
+            { id: 301, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741338/8-colombo_yaly18.png" },
+            { id: 302, name: "Sigiriya ", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741321/3-sigiriya_ibxdln.png" }
+
+        ]
     },
     {
         id: 2,
-        category: "More than 2 Day Tours",
-        title: "Island Charm Express",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765742402/01_eo3mys.png",
-        location: "From Airport to Destinations",
-        rating: 4.8,
-        type: "Extended Tour",
-        desc: "A perfect blend of culture and nature, taking you from the rock fortress of Sigiriya to the cool hills of Nuwara Eliya.",
+        category: "1 Day Tours",
+        title: "Ambuluwawa Day Tour",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766329984/ambuluwawa_qkfyb7.png",
+        location: "Ambuluwawa / Gampola",
+        rating: 5,
+        type: "Day Tour",
+        desc: `Ambuluwawa is a majestic hill located near Gampola in the Kandy district of Sri Lanka. Often referred to as a “mini world” due to its unique biodiversity and architectural marvels, Ambuluwawa has become a popular destination for nature lovers and travelers seeking tranquilitya
+
+Key Highlights:
+
+Panoramic Views: Ascend to the top of Ambuluwawa Hill and be rewarded with breathtaking panoramic views of lush greenery, misty mountains, and the surrounding landscape.The hill offers a serene escape from the hustle and bustle of city life.
+
+Ambuluwawa Tower: Atop the hill stands the iconic Ambuluwawa Tower, an intricately designed seven- story structure that resembles a Buddhist stupa.The tower serves as a viewpoint, offering 360 - degree views of the stunning countryside.
+
+Biodiversity Complex: Ambuluwawa is renowned for its rich biodiversity.The hill is home to a variety of flora and fauna, making it a haven for birdwatchers and nature enthusiasts.
+
+Spiraling Staircase: A unique feature of Ambuluwawa is its spiraling staircase that winds around the hill, providing a scenic walking trail for visitors to explore the lush surroundings.
+
+Religious Sites: The hill also houses religious sites, including a Buddhist temple and a mosque, symbolizing the spirit of harmony and coexistence in Sri Lanka.
+
+Recreational Facilities: Ambuluwawa offers recreational facilities such as picnic spots, children’s play areas, and well - maintained gardens, making it an ideal destination for families and travelers of all ages.
+
+Getting There:
+
+Ambuluwawa is accessible from various locations, with Gampola being the nearest town.Visitors can reach the base of the hill by road and then either hike or use a vehicle to ascend to the top.
+
+Best Time to Visit:
+
+The best time to visit Ambuluwawa is during the dry season(from November to April), when the weather is pleasant and the views are clear.However, the hill’s beauty can be admired year - round, with each season bringing its own charm.
+
+Note: Ambuluwawa is a cherished natural and cultural heritage site.As with any natural destination, visitors are encouraged to respect the environment and follow guidelines to preserve its beauty for future generations.`,
         pickup: "Airport or Any Location",
-        nights: 6,
-        drop: "Colombo",
+        nights: 0,
         destinations: [
-            { id: 309, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765742411/01-negombo_gsglkh.png" },
-            { id: 310, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765742395/2-sigiriya_vl7uoe.png" },
-            { id: 311, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765742432/3-kandy_uq89qs.png" },
-            { id: 312, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765742428/4-nuwaraeliya_igy7h5.png" },
-            { id: 313, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765742429/5-yala_b1vcwv.png" },
-            { id: 314, name: "Wadduwa", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765742414/6-wadduwa_bbmsoa.png" },
-            { id: 315, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765742416/7-colombo_tfq1wp.png" },
+            { id: 303, name: "Ambuluwawa Tower", image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766329984/ambuluwawa_qkfyb7.png" }
         ]
     },
     {
         id: 3,
         category: "More than 2 Day Tours",
-        title: "Grand Southern Loop",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746115/01_bqbeyr.png",
+        title: "Ella - Nuwara Eliya Tour",
+        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746709/4-nuwaraeliya_rrofi1.png",
         location: "From Airport to Destinations",
-        rating: 4.9,
+        rating: 4.8,
         type: "Extended Tour",
-        desc: "Experience the ultimate Sri Lankan journey, covering ancient capitals, hill country tea estates, and the southern coast.",
-        nights: 7,
+        desc: `Day 1: Colombo to Nuwara Eliya
+
+Morning:
+Depart from Colombo and head towards Nuwara Eliya, located approximately 180 km away.
+Enjoy a scenic drive through the lush greenery and charming villages of Sri Lanka’s central highlands.
+
+Afternoon:
+Arrive in Nuwara Eliya and check into your chosen accommodation.
+Relax and rejuvenate after the journey.
+
+Evening:
+Take a leisurely stroll around Gregory Lake, admiring the serene surroundings and enjoying the cool climate.
+Visit the bustling Nuwara Eliya town center and explore the local markets.
+
+Day 2: Horton Plains and World’s End
+
+Morning:
+Start your day early and have breakfast at your hotel.
+Proceed to Horton Plains National Park for a memorable trek to “World’s End” and “Little World’s End.” Marvel at the breathtaking views of the valleys below.
+
+Lunch:
+Enjoy a packed lunch amidst the natural beauty of Horton Plains.
+
+Afternoon:
+Explore Baker’s Falls, a picturesque waterfall within the park.
+Visit the Pattipola Railway Station, the highest railway station in Sri Lanka, offering scenic views of the surrounding hills.
+
+Day 3: Nuwara Eliya to Ella
+
+Morning:
+After breakfast, bid farewell to Nuwara Eliya and depart for Ella, approximately 60 km away.
+The journey to Ella is a treat with winding roads and breathtaking landscapes.
+
+Afternoon:
+Arrive in Ella and check into your chosen accommodation.
+Have a relaxing lunch at a local restaurant.
+
+Evening:
+Hike up Little Adam’s Peak to catch a mesmerizing sunset view over Ella’s lush valleys.
+
+Day 4: Ella Exploration
+
+Morning:
+Start your day with breakfast at your hotel.
+Embark on the iconic Ella Rock hike for panoramic views of the Ella Gap and the surrounding countryside.
+
+Lunch:
+Return to Ella town for a delightful lunch at a local eatery.
+
+Afternoon:
+Visit the Nine Arch Bridge, an architectural marvel amidst the verdant landscape.
+Explore the Ravana Ella Falls, a captivating waterfall located near Ella town.
+
+Evening:
+Relax and enjoy your last evening in Ella, soaking in the tranquil ambiance.
+
+Day 5: Departure from Ella
+
+After breakfast, check out from your accommodation and depart from Ella to your onward destination.`,
         pickup: "Airport or Any Location",
-        drop: "Colombo",
+        nights: 2,
         destinations: [
-            { id: 316, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746117/01-negombo_wkoyqd.png" },
-            { id: 317, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746136/02-sigiriya_cax1bs.png" },
-            { id: 318, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746146/03-kandy_jhktm8.png" },
-            { id: 319, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746143/04-nuwaraeliya_p9zvxt.png" },
-            { id: 320, name: "Tangalle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746141/05-tangalle_hs6kuv.png" },
-            { id: 321, name: "Galle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746117/06-galle_ody6dd.png" },
-            { id: 322, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746117/06-galle_ody6dd.png" }
+            { id: 304, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746431/4-colombo_vtw0li.png" },
+            { id: 305, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746709/4-nuwaraeliya_rrofi1.png" },
+            { id: 306, name: "Ella", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750560/4-ella_jji5zl.png" }
         ]
     },
     {
         id: 4,
         category: "More than 2 Day Tours",
-        title: "Misty Hills & Golden Sands",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746420/01_iudplz.png",
+        title: "Yala Tour",
+        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747386/4-yala_afw87c.png",
         location: "From Airport to Destinations",
-        rating: 4.7,
+        rating: 4.8,
         type: "Extended Tour",
-        desc: "A compact tour focused on the cool climate of the central highlands and the sunny beaches of the west coast.",
-        nights: 4,
+        desc: `Day 1: Yala National Park Safari
+
+Morning:
+Depart from your accommodation early in the morning to reach Yala National Park, one of Sri Lanka’s most renowned wildlife reserves.
+Arrive at the park’s entrance and begin your exciting safari adventure.
+
+Morning Safari:
+Embark on a morning jeep safari to explore the park’s diverse landscapes and wildlife.Keep your eyes peeled for elephants, leopards, deer, wild boars, and various bird species.
+
+Lunch:
+Enjoy a packed lunch amidst the natural beauty of the park.
+
+Afternoon Safari:
+Continue your safari in the afternoon, exploring different areas of the park for more wildlife sightings and stunning scenery.
+
+Evening:
+As the sun sets, head back to your accommodation near the park to relax and unwind.
+
+Day 2: Yala Village and Departure
+
+Morning:
+After breakfast, visit a local village near Yala to experience the authentic rural life of Sri Lanka.Interact with the friendly locals and learn about their traditions and customs.
+
+Lunch:
+Enjoy a traditional Sri Lankan lunch at the village, tasting delicious home - cooked dishes.
+
+Afternoon:
+After your village visit, depart from Yala National Park and head to your onward destination.
+
+Optional Additions:
+If you have more time, consider extending your safari experience with an evening safari on Day 1 or a morning safari on Day 2.
+You can also explore nearby attractions, such as Kataragama Temple, which is a significant religious site for Buddhists, Hindus, and Muslims.`,
         pickup: "Airport or Any Location",
-        drop: "Colombo",
+        nights: 2,
         destinations: [
-            { id: 323, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746451/1-kandy_gsipqe.png" },
-            { id: 324, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746444/2-nuwaraeliya_hymxcb.png" },
-            { id: 325, name: "Bentota", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746440/3-bentota_caipw6.png" },
-            { id: 326, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746431/4-colombo_vtw0li.png" }
+            { id: 307, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746431/4-colombo_vtw0li.png" },
+            { id: 308, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747386/4-yala_afw87c.png" }
         ]
     },
     {
         id: 5,
-        category: "More than 2 Day Tours",
-        title: "Trinco Heritage Trail",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746685/01_m61pje.png",
-        location: "From Airport to Destinations",
-        rating: 4.8,
-        type: "Extended Tour",
-        desc: "Discover the untouched beaches of Trincomalee combined with the cultural majesty of Sigiriya and Kandy.",
-        nights: 5,
+        category: "1 Day Tours",
+        title: "Mirissa Beach Tour",
+        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749438/5-mirissa_kow4mw.png",
+        location: "Colombo / Mirissa",
+        rating: 5,
+        type: "Day Tour",
+        desc: `Traveling from Colombo to Mirissa in one day is possible, but it will require careful planning and an early start.Here’s a suggested itinerary for a one - day trip from Colombo to Mirissa:
+
+6:00 AM – Depart from Colombo: Start your journey early in the morning to avoid traffic and make the most of your day in Mirissa.You can take a private car, taxi, or use public transportation like a train or bus.
+
+9:00 AM – Arrive in Mirissa: It will take around 2 - 3 hours to reach Mirissa from Colombo, depending on the mode of transportation and traffic conditions.
+
+9:30 AM – Breakfast in Mirissa: Find a local restaurant or cafe to have breakfast and fuel up for the day ahead.
+
+10:30 AM – Mirissa Beach: Spend some time relaxing at Mirissa Beach, known for its beautiful sandy shoreline and calm waters.
+
+12:00 PM – Whale Watching Tour: Mirissa is famous for its whale watching opportunities.Join a reputable whale watching tour to see majestic marine creatures like blue whales, sperm whales, and dolphins.These tours typically last for about 3 - 5 hours.
+
+5:00 PM – Return to Colombo: After your whale watching tour, start your journey back to Colombo.
+
+8:00 PM – Dinner in Colombo: Once you reach Colombo, have dinner at a restaurant of your choice before ending your day.`,
         pickup: "Airport or Any Location",
-        drop: "Colombo",
+        nights: 0,
         destinations: [
-            { id: 327, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746720/1-sigiriya_iynoyb.png" },
-            { id: 328, name: "Trincomalee", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746710/2-trincomalee_rscer3.png" },
-            { id: 329, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746693/3-kandy_jvc81l.png" },
-            { id: 330, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746709/4-nuwaraeliya_rrofi1.png" },
-            { id: 331, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746688/5-colombo_m4gljj.png" }
+            { id: 309, name: "Mirissa Beach", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749438/5-mirissa_kow4mw.png" }
         ]
     },
     {
         id: 6,
-        category: "More than 2 Day Tours",
-        title: "Tropical Trio Escape",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746931/01_lkfbzb.png",
-        location: "From Airport to Destinations",
-        rating: 4.6,
-        type: "Extended Tour",
-        desc: "A quick yet fulfilling getaway visiting the bustling capital, the sacred city of Kandy, and the relaxing Bentota beach.",
-        nights: 3,
+        category: "1 Day Tours",
+        title: "Kandy City Tour",
+        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746961/2-kandy_mgx9ca.png",
+        location: "Colombo / Kandy",
+        rating: 5,
+        type: "Day Tour",
+        desc: `A one-day city tour of Kandy
+Sri Lanka’s cultural capital
+usually covers the following popular attractions:
+
+Temple of the Tooth(Sri Dalada Maligawa): This sacred Buddhist temple houses the relic of the tooth of the Buddha and is an essential religious and cultural site.
+Kandy Lake: Enjoy a leisurely stroll around the picturesque Kandy Lake, known as the “Bogambara Lake,” located at the heart of the city.
+Peradeniya Royal Botanical Gardens: Explore the beautiful gardens, featuring a vast collection of orchids, palm trees, and other flora, spread across 147 acres.
+Kandy View Point: Get panoramic views of the city and its surrounding hills from various vantage points like the Bahirawakanda Buddha Statue and other viewpoints.
+Cultural Show: Attend a traditional Kandyan dance performance showcasing vibrant costumes and dynamic dance forms.
+Gem Museum and Factory: Learn about Sri Lanka’s gem industry and see how precious stones are processed and made into jewelry.
+Kandy Market: Experience the local culture by visiting the bustling market, where you can find a variety of traditional crafts, spices, and souvenirs.
+
+Lunch: Savor authentic Sri Lankan cuisine at a local restaurant or enjoy international dishes depending on your preference.`,
         pickup: "Airport or Any Location",
-        drop: "Bentota",
+        nights: 0,
         destinations: [
-            { id: 332, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746950/1-colombo_c1ffhy.png" },
-            { id: 333, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746961/2-kandy_mgx9ca.png" },
-            { id: 334, name: "Bentota", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746953/3-bentota_ultcrx.png" }
+            { id: 310, name: "Kandy City", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765746961/2-kandy_mgx9ca.png" }
         ]
     },
     {
         id: 7,
-        category: "More than 2 Day Tours",
-        title: "Highland Tea Trails",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747116/01_hzehe4.png",
-        location: "From Airport to Destinations",
-        rating: 4.7,
-        type: "Extended Tour",
-        desc: "Immerse yourself in the lush greenery of Sri Lanka's tea country with stops in Kandy and 'Little England'.",
-        nights: 3,
+        category: "1 Day Tours",
+        title: "Colombo City Tour",
+        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747912/8-colombo_dyut6y.png",
+        location: "Colombo ",
+        rating: 5,
+        type: "Day Tour",
+        desc: `Colombo in one day can be a rewarding experience, allowing you to visit some of the city’s key attractions. Here’s a suggested one-day itinerary for Colombo:
+
+8:00 AM – Breakfast: Start your day with a hearty breakfast at a local cafe or restaurant.Colombo offers a variety of options for traditional Sri Lankan breakfasts or international dishes.
+
+9:00 AM – Gangaramaya Temple: Visit Gangaramaya Temple, one of Colombo’s most prominent Buddhist temples.The temple complex features impressive architecture, a museum, and a fascinating collection of religious artifacts.
+
+10:30 AM – Independence Square and Arcade: Head to Independence Square, a historical landmark commemorating Sri Lanka’s independence from British rule.It’s a beautiful area for a leisurely stroll.Adjacent to the square, you’ll find the Independence Arcade, which houses boutique shops, cafes, and art galleries.
+
+12:00 PM – Lunch: Enjoy lunch at a local restaurant serving Sri Lankan cuisine or international dishes, depending on your preference.
+
+1:00 PM – Galle Face Green: Visit Galle Face Green, a popular ocean - side urban park.It’s an excellent place for a relaxing walk, flying kites, or simply enjoying the coastal breeze.
+
+2:00 PM – National Museum of Colombo: Explore the National Museum of Colombo to learn about the island’s history, culture, and heritage.The museum exhibits a vast collection of artifacts, including ancient artifacts, royal regalia, and traditional crafts.
+
+3:30 PM – Viharamahadevi Park: Take a stroll in Viharamahadevi Park, the largest park in Colombo.Enjoy the lush greenery and relax in the serene atmosphere.
+
+4:30 PM – Shopping at Pettah Market: Visit the bustling Pettah Market for a shopping experience like no other.This vibrant market offers everything from clothes and accessories to spices, electronics, and souvenirs.
+
+6:00 PM – Sunset at Mount Lavinia Beach: Head to Mount Lavinia Beach to witness a beautiful sunset over the Indian Ocean.You can relax at a beachside restaurant or cafe and enjoy the view.
+
+8:00 PM – Dinner: End your day with a delicious dinner at one of Colombo’s many restaurants, offering a variety of cuisines.`,
         pickup: "Airport or Any Location",
-        drop: "Colombo",
+        nights: 0,
         destinations: [
-            { id: 335, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747117/1-kandy_uo5crj.png" },
-            { id: 336, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747123/2-Nuwaraeliya_yqmo8b.png" },
-            { id: 337, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747122/3-colombo_a8qjpu.png" }
+            { id: 311, name: "Colombo City", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747912/8-colombo_dyut6y.png" }
         ]
     },
     {
         id: 8,
         category: "More than 2 Day Tours",
-        title: "Wilderness & Heritage Loop",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747358/01_khge8o.png",
+        title: "Trincomalee Tour",
+        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749620/2-trincomalee_jbwbmg.png",
         location: "From Airport to Destinations",
-        rating: 4.9,
+        rating: 4.8,
         type: "Extended Tour",
-        desc: "From the Sigiriya rock to Yala leopards and Bentota turtles, this tour covers the best of wildlife and history.",
-        nights: 5,
+        desc: `Trincomalee, located on the north eastern coast of Sri Lanka, offers a mix of historical sites, beautiful beaches, and natural attractions. Spending two days in Trincomalee will allow you to explore its highlights at a comfortable pace. Here’s a suggested two-day itinerary:
+
+Day 1:
+
+8:00 AM – Arrival in Trincomalee: Arrive in Trincomalee and check into your accommodation.
+
+9:00 AM – Koneswaram Temple: Start your day by visiting the Koneswaram Temple, a renowned Hindu temple with a picturesque location on Swami Rock overlooking the sea.
+
+11:00 AM – Fort Frederick: Explore Fort Frederick, a colonial - era fort that offers panoramic views of the coastline and Trincomalee town.
+
+12:30 PM – Lunch: Enjoy lunch at a local restaurant, trying some delicious Sri Lankan seafood dishes.
+
+2:00 PM – Pigeon Island National Park: Take a boat ride to Pigeon Island National Park, a marine sanctuary known for its coral reefs and diverse marine life.You can enjoy snorkeling or simply relax on the beach.
+
+5:00 PM – Marble Beach: Head to Marble Beach, a beautiful and less crowded beach where you can enjoy the sunset and take a leisurely stroll.
+
+7:00 PM – Dinner: Have dinner at a restaurant near the beach or back in the city center.
+
+Day 2:
+
+7:00 AM – Breakfast: Start your day with breakfast at your accommodation or a nearby cafe.
+
+8:00 AM – Whale Watching Tour(Optional): Consider taking a morning whale watching tour(seasonal) to spot blue whales, sperm whales, and dolphins.Trincomalee is one of the best places in Sri Lanka for whale watching.
+
+12:00 PM – Lunch: After your morning activity, have lunch at a local eatery.
+
+1:30 PM – Hot Water Springs: Visit the Kanniya Hot Water Springs, located a short drive from Trincomalee.It’s a unique natural attraction where you can soak your feet in the hot water believed to have healing properties.
+
+3:00 PM – Uppuveli Beach: Spend the afternoon at Uppuveli Beach, another beautiful stretch of sand ideal for swimming and relaxing.
+
+6:00 PM – Back to Trincomalee: Return to Trincomalee and spend the evening exploring the local markets or enjoying a stroll by the beach.
+
+8:00 PM – Dinner: Enjoy a final dinner in Trincomalee, savoring the flavors of the region.`,
         pickup: "Airport or Any Location",
-        drop: "Bentota",
+        nights: 2,
         destinations: [
-            { id: 338, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747376/1-sigiriya_nvcl0u.png" },
-            { id: 339, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747365/2-kandy_q22xxa.png" },
-            { id: 340, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747393/3-nuwaraeliya_eduddg.png" },
-            { id: 341, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747386/4-yala_afw87c.png" },
-            { id: 342, name: "Bentota", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747391/5-bentota_idmcbm.png" }
+            { id: 312, name: "Trincomalee ", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749620/2-trincomalee_jbwbmg.png" }
         ]
     },
     {
         id: 9,
         category: "More than 2 Day Tours",
-        title: "Tea Country to Tides",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747602/01_rdzsux.png",
+        title: "Nilaveli Tour",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766331376/nilaveli_rv7rc1.webp",
         location: "From Airport to Destinations",
         rating: 4.8,
         type: "Extended Tour",
-        desc: "Journey through the misty plantations of Hatton and descend to the historic coastal city of Galle.",
-        nights: 4,
+        desc: `Nilaveli, located near Trincomalee on the northeastern coast of Sri Lanka, is known for its pristine beaches, clear waters, and tranquil atmosphere. Spending two days in Nilaveli will allow you to unwind and enjoy the beauty of the area. Here’s a suggested two-day itinerary for Nilaveli:
+
+Day 1:
+
+8:00 AM – Arrival in Nilaveli: Arrive in Nilaveli and check into your accommodation.
+
+9:00 AM – Nilaveli Beach: Start your day by exploring Nilaveli Beach.Enjoy the soft sandy shoreline and take a dip in the clear waters.
+
+11:00 AM – Pigeon Island National Park: Take a boat ride to Pigeon Island National Park, known for its vibrant coral reefs and diverse marine life.Spend time snorkeling and admiring the underwater beauty.
+
+1:00 PM – Lunch: Return to the mainland and have lunch at a beachside restaurant or your accommodation.
+
+2:30 PM – Relaxation: Spend the afternoon relaxing on the beach or at your hotel.You can also take a leisurely walk along the coastline.
+
+5:00 PM – Sunset Point: Head to a nearby sunset point or back to Nilaveli Beach to witness the beautiful sunset over the Indian Ocean.
+
+7:00 PM – Dinner: Have dinner at a local restaurant, trying some of the fresh seafood dishes that the area is known for.
+
+Day 2:
+
+7:00 AM – Breakfast: Start your day with breakfast at your accommodation.
+
+8:00 AM – Snorkeling or Scuba Diving(Optional): Consider participating in a morning snorkeling or scuba diving session to explore more of the underwater world around Nilaveli.
+
+12:00 PM – Lunch: After your morning activity, have lunch at a nearby restaurant or your hotel.
+
+1:30 PM – Trincomalee Excursion: Take a short trip to Trincomalee and visit attractions such as Koneswaram Temple or Fort Frederick.You can also explore the local markets and experience the city’s vibrant culture.
+
+4:00 PM – Back to Nilaveli: Return to Nilaveli and spend the rest of the day at your leisure.You can relax on the beach or participate in water sports like kayaking or jet skiing.
+
+7:00 PM – Dinner: Enjoy a final dinner in Nilaveli, cherishing the serenity of this beautiful coastal paradise.`,
         pickup: "Airport or Any Location",
-        drop: "Galle",
+        nights: 1,
         destinations: [
-            { id: 343, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747617/1-negombo_nwnzgr.png" },
-            { id: 344, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747608/2-kandy_jmrvgo.png" },
-            { id: 345, name: "Hatton", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747611/3-hatton_jgdhnx.png" },
-            { id: 346, name: "Galle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747615/4-galle_qfjrz4.png" }
+            { id: 313, name: "Nilaveli Beach ", image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766331376/nilaveli_rv7rc1.webp" }
         ]
     },
     {
         id: 10,
         category: "More than 2 Day Tours",
-        title: "Royal Lanka Odyssey",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747871/01_fuhozb.png",
+        title: "Pasikuda Tour",
+        image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766331579/pasikuda_pmo6pv.webp",
         location: "From Airport to Destinations",
-        rating: 5,
+        rating: 4.8,
         type: "Extended Tour",
-        desc: "The complete island experience covering ancient ruins in Anuradhapura, central highlands, wildlife safaris, and beaches.",
-        nights: 8,
+        desc: `Pasikudah, also known as Pasikuda, is a beautiful coastal area on the eastern coast of Sri Lanka, famous for its long stretch of golden sandy beaches and clear shallow waters. Spending two days in Pasikuda will give you a chance to relax on the beach, indulge in water activities, and explore the surrounding areas. Here’s a suggested two-day itinerary for Pasikuda:
+
+Day 1:
+
+8:00 AM – Arrival in Pasikuda: Arrive in Pasikuda and check into your beachfront accommodation.
+
+9:00 AM – Pasikuda Beach: Start your day by heading straight to Pasikuda Beach.Enjoy the calm, shallow waters and take a leisurely walk along the shore.
+
+11:00 AM – Water Sports Activities: Engage in water sports activities such as jet skiing, banana boat rides, or snorkeling.Pasikuda is known for its safe and enjoyable water activities.
+
+1:00 PM – Lunch: Have lunch at one of the beachside restaurants offering a variety of seafood and local dishes.
+
+2:30 PM – Kayaking: Go on a kayaking adventure along the coastline, exploring the turquoise waters and enjoying the scenic views.
+
+5:00 PM – Relaxation: Spend the late afternoon relaxing on the beach or at the hotel pool, savoring the peaceful ambiance.
+
+7:00 PM – Dinner: Dine at a beachside restaurant and relish the beautiful sunset views while enjoying your meal.
+
+Day 2:
+
+7:00 AM – Breakfast: Start your day with breakfast at your hotel or a nearby cafe.
+
+8:00 AM – Cycling Tour(Optional): Consider renting a bicycle and exploring the nearby villages and countryside.Cycling is a great way to experience the local culture and scenery.
+
+11:00 AM – Spa and Wellness: Indulge in some pampering at one of the spas or wellness centers in Pasikuda.Treat yourself to a relaxing massage or other rejuvenating treatments.
+
+1:00 PM – Lunch: Enjoy a leisurely lunch, trying out different Sri Lankan delicacies.
+
+2:30 PM – Pasikuda Beach: Spend the afternoon back at Pasikuda Beach, either lounging on the sand or taking a refreshing swim.
+
+5:00 PM – Sunset Cruise(Optional): Consider taking a sunset boat cruise along the coast for a picturesque view of the setting sun.
+
+7:00 PM – Dinner: For your last night in Pasikuda, enjoy a memorable dinner at a restaurant of your choice.`,
         pickup: "Airport or Any Location",
-        drop: "Colombo",
+        nights: 1,
         destinations: [
-            { id: 347, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747969/1-negombo_iwzvua.png" },
-            { id: 348, name: "Anuradhapura", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747977/2-anuradhapura_hsyzcn.png" },
-            { id: 349, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747909/3-sigiriya_kbhrko.png" },
-            { id: 350, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747901/4-kandy_h3yqbw.png" },
-            { id: 351, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747954/5-kandy_dvu4ee.png" },
-            { id: 352, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747954/6-yala_laidpj.png" },
-            { id: 353, name: "Kalutara", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747996/7-kalutara_rofuod.png" },
-            { id: 354, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765747912/8-colombo_dyut6y.png" }
+            { id: 314, name: "Pasikuda Beach ", image: "https://res.cloudinary.com/dewiswmaa/image/upload/v1766331579/pasikuda_pmo6pv.webp" }
         ]
     },
     {
         id: 11,
-        category: "More than 2 Day Tours",
-        title: "Capital & Kingdom Short Stay",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765748069/01_mty1p0.png",
-        location: "From Airport to Destinations",
-        rating: 4.5,
-        type: "Extended Tour",
-        desc: "A brief yet culturally rich tour connecting the sacred Temple of the Tooth in Kandy with the vibrant life of Colombo.",
-        nights: 2,
-        pickup: "Airport or Any Location",
-        drop: "Colombo",
-        destinations: [
-            { id: 355, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765748074/1-kandy_h3qkqz.png" },
-            { id: 356, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765748087/2-colombo_xxrbhw.png" }
-        ]
-    },
-    {
-        id: 12,
-        category: "More than 2 Day Tours",
-        title: "Southern Coast & Safari",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749404/01_rlkwxx.png",
-        location: "From Airport to Destinations",
-        rating: 4.9,
-        type: "Extended Tour",
-        desc: "A diverse route featuring elephants in Udawalawe, whale watching in Mirissa, and the colonial charm of Galle Fort.",
-        nights: 6,
-        pickup: "Airport or Any Location",
-        drop: "Galle",
-        destinations: [
-            { id: 357, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749466/1-sigiriya_vzmgws.png" },
-            { id: 358, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749463/2-kandy_bygy3h.png" },
-            { id: 359, name: "Hatton", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749426/3-hatton_ydwq5w.png" },
-            { id: 360, name: "Udawalawe", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749465/4-udawalawa_u8yqa3.png" },
-            { id: 361, name: "Mirissa", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749438/5-mirissa_kow4mw.png" },
-            { id: 362, name: "Galle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749476/6-galle_gbbduz.png" }
-        ]
-    },
-    {
-        id: 13,
-        category: "More than 2 Day Tours",
-        title: "Deep South Discovery",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749550/01_mjo5f5.png",
-        location: "From Airport to Destinations",
-        rating: 4.6,
-        type: "Extended Tour",
-        desc: "A direct route to the deep south, perfect for those heading to the dry zone and southern luxury resorts.",
-        nights: 2,
-        pickup: "Airport or Any Location",
-        drop: "Hambantota",
-        destinations: [
-            { id: 363, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749662/1-negombo_qurjsc.png" },
-            { id: 364, name: "Hambantota", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749654/2-hambantota_cjwkzb.png" }
-        ]
-    },
-    {
-        id: 14,
-        category: "More than 2 Day Tours",
-        title: "East Coast Heritage Run",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749530/01_qrn7z3.png",
-        location: "From Airport to Destinations",
-        rating: 4.8,
-        type: "Extended Tour",
-        desc: "Combine the ancient rock fortress of Sigiriya with the sunny, unspoiled beaches of Trincomalee.",
-        nights: 4,
-        pickup: "Airport or Any Location",
-        drop: "Colombo",
-        destinations: [
-            { id: 365, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749632/1-sigiriya_ywel7u.png" },
-            { id: 366, name: "Trincomalee", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749620/2-trincomalee_jbwbmg.png" },
-            { id: 367, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749563/3-kandy_n3lnq8.png" },
-            { id: 368, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749660/4-colombo_rrxlo5.png" }
-        ]
-    },
-    {
-        id: 15,
-        category: "More than 2 Day Tours",
-        title: "Scenic Isle Loop",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749510/01_rol0d7.png",
-        location: "From Airport to Destinations",
-        rating: 4.9,
-        type: "Extended Tour",
-        desc: "A classic circuit featuring the best of Sri Lanka: Sigiriya's history, Kandy's culture, and Bentota's golden sands.",
-        nights: 6,
-        pickup: "Airport or Any Location",
-        drop: "Colombo",
-        destinations: [
-            { id: 369, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749601/1-negombo_ayvcgt.png" },
-            { id: 370, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749632/2-sigiriya_zwde4o.png" },
-            { id: 371, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749669/3-kandy_ltpkvy.png" },
-            { id: 372, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749572/4-nuwaraeliya_q62bqv.png" },
-            { id: 373, name: "Bentota", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749605/5-bentota_svdvpu.png" },
-            { id: 374, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749562/6-colombo_iwdtfm.png" }
-        ]
-    },
-    {
-        id: 16,
-        category: "More than 2 Day Tours",
-        title: "Highlands to Dutch Fort",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750333/01_vdpuuc.png",
-        location: "From Airport to Destinations",
-        rating: 4.7,
-        type: "Extended Tour",
-        desc: "Travel from the cultural capital of Kandy down to the southern coast, visiting elephants in Udawalawe en route.",
-        nights: 5,
-        pickup: "Airport or Any Location",
-        drop: "Colombo",
-        destinations: [
-            { id: 375, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750485/1-kandy_jrmoer.png" },
-            { id: 376, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750521/2-nuwaraeliya_txt8nz.png" },
-            { id: 377, name: "Udawalawe", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750497/3-udawalawa_pilbcl.png" },
-            { id: 378, name: "Galle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750518/4-galle_x0fr7e.png" },
-            { id: 379, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765749562/6-colombo_iwdtfm.png" }
-        ]
-    },
-    {
-        id: 17,
-        category: "More than 2 Day Tours",
-        title: "Southern Wildlife Safari",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750326/image_g5lvth.png",
-        location: "From Airport to Destinations",
-        rating: 4.8,
-        type: "Extended Tour",
-        desc: "A wildlife enthusiast's dream, visiting both Yala and Udawalawe national parks along with the Galle Fort.",
-        nights: 4,
-        pickup: "Airport or Any Location",
-        drop: "Colombo",
-        destinations: [
-            { id: 380, name: "Galle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750488/1-galle_brirxn.png" },
-            { id: 381, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750484/2-yala_qntcys.png" },
-            { id: 382, name: "Udawalawa", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750616/3-udawalawa_unxqpm.png" },
-            { id: 383, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750472/4-colombo_pkua26.png" }
-        ]
-    },
-    {
-        id: 18,
-        category: "More than 2 Day Tours",
-        title: "Nature & History Grand Tour",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750322/image_xcnabm.png",
-        location: "From Airport to Destinations",
-        rating: 5,
-        type: "Extended Tour",
-        desc: "A comprehensive journey covering the cultural triangle, cool highlands, Yala wildlife, and Bentota beaches.",
-        nights: 6,
-        pickup: "Airport or Any Location",
-        drop: "Colombo",
-        destinations: [
-            { id: 384, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750390/1-sigiriya_ceumpl.png" },
-            { id: 385, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750618/2-kandy_oopsvm.png" },
-            { id: 386, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750611/3-nuwaraeliya_bbcmc7.png" },
-            { id: 387, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750423/4-yala_zbqnoa.png" },
-            { id: 388, name: "Bentota", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750492/5-bentota_zzu4hc.png" },
-            { id: 389, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750472/4-colombo_pkua26.png" }
-        ]
-    },
-    {
-        id: 19,
-        category: "More than 2 Day Tours",
-        title: "Ancient Rock to Sandy Beach",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750369/image_ohlfmr.png",
-        location: "From Airport to Destinations",
-        rating: 4.6,
-        type: "Extended Tour",
-        desc: "A focused tour connecting the ancient history of Sigiriya and Kandy with the coastal relaxation of Bentota.",
-        nights: 3,
-        pickup: "Airport or Any Location",
-        drop: "Bentota",
-        destinations: [
-            { id: 390, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750426/1-sigiriya_jy7eng.png" },
-            { id: 391, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750418/2-kandy_e7w8ut.png" },
-            { id: 392, name: "Bentota", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750439/3-bentota_ednwm2.png" }
-        ]
-    },
-    {
-        id: 20,
-        category: "More than 2 Day Tours",
-        title: "Ella Gap & Coastal Bliss",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750348/image_wszaya.png",
-        location: "From Airport to Destinations",
-        rating: 4.9,
-        type: "Extended Tour",
-        desc: "Experience the breathtaking views in Ella and the cultural heart of Kandy before unwinding in Bentota.",
-        nights: 5,
-        pickup: "Airport or Any Location",
-        drop: "Bentota",
-        destinations: [
-            { id: 393, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750321/1-negombo_vyltuc.png" },
-            { id: 394, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750385/2-sigiriya_ilpaqs.png" },
-            { id: 395, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750318/3-kandy_k7ckin.png" },
-            { id: 396, name: "Ella", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750560/4-ella_jji5zl.png" },
-            { id: 397, name: "Bentota", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750385/5-bentota_ekuu3b.png" }
-        ]
-    },
-    {
-        id: 21,
-        category: "More than 2 Day Tours",
-        title: "Northeast Coastal Vibes",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750349/image_rggikn.png",
-        location: "From Airport to Destinations",
-        rating: 4.7,
-        type: "Extended Tour",
-        desc: "Travel from the west coast to the east, enjoying the unique beaches of Trincomalee and the cool climate of Nuwara Eliya.",
-        nights: 5,
-        pickup: "Airport or Any Location",
-        drop: "Colombo",
-        destinations: [
-            { id: 398, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750539/1-negombo_wqv0wt.png" },
-            { id: 399, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750556/2-nuwaraeliya_scvoyl.png" },
-            { id: 400, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750341/3-kandy_hjamkm.png" },
-            { id: 401, name: "Trincomalee", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750591/4-trincomalee_ilqybi.png" },
-            { id: 402, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765750358/5-colombo_xz0p26.png" }
-        ]
-    },
-    {
-        id: 22,
-        category: "More than 2 Day Tours",
-        title: "Wildlife & Highlands Trek",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752259/image_lfu7kl.png",
-        location: "From Airport to Destinations",
-        rating: 4.8,
-        type: "Extended Tour",
-        desc: "A well-rounded tour featuring Sigiriya Rock, the leopards of Yala, and the central hills, returning via the coast.",
-        nights: 7,
-        pickup: "Airport or Any Location",
-        drop: "Colombo",
-        destinations: [
-            { id: 403, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752090/1-negombo_lfb6i9.png" },
-            { id: 404, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752085/2-sigirya_mjs5sx.png" },
-            { id: 405, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751837/3-kandy_qbaz7z.png" },
-            { id: 406, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752546/4-nuwaraeliya_kw0xrd.png" },
-            { id: 407, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752160/5-yala_hfitnf.png" },
-            { id: 408, name: "Kalutara", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752256/6-kalutara_mbbyec.png" },
-            { id: 409, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751960/7-colombo_lnd7xu.png" }
-        ]
-    },
-    {
-        id: 23,
-        category: "More than 2 Day Tours",
-        title: "Coastal & Safari Adventure",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751831/image_wzbxcm.png",
-        location: "From Airport to Destinations",
-        rating: 4.6,
-        type: "Extended Tour",
-        desc: "Start in the capital, head to the hills, spot wildlife in Yala, and finish with the colonial charm of Galle.",
-        nights: 5,
-        pickup: "Airport or Any Location",
-        drop: "Galle",
-        destinations: [
-            { id: 410, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751810/1-colombo_kejqyr.png" },
-            { id: 411, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751834/2-kandy_yb8sfj.png" },
-            { id: 412, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752691/3-nuwaraeliya_gbierb.png" },
-            { id: 413, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752186/4-yala_jpnwh8.png" },
-            { id: 414, name: "Galle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752041/5-galle_koefry.png" }
-        ]
-    },
-    {
-        id: 24,
-        category: "More than 2 Day Tours",
-        title: "Scenic Train & Fort Tour",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751782/image_vyz3qv.png",
-        location: "From Airport to Destinations",
-        rating: 4.9,
-        type: "Extended Tour",
-        desc: "A picturesque route through Pussellawa and Ella, offering stunning mountain views, followed by Yala and Galle.",
-        nights: 7,
-        pickup: "Airport or Any Location",
-        drop: "Galle",
-        destinations: [
-            { id: 415, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752513/1-negombo_epklfq.png" },
-            { id: 416, name: "Dambulla", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752900/2-dambulla_cw3efl.png" },
-            { id: 417, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752544/3-sigiriya_jgjvru.png" },
-            { id: 418, name: "Pussellawa", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752142/4-pussellawa_u8zftk.png" },
-            { id: 419, name: "Ella", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752635/5-ella_fc3gue.png" },
-            { id: 420, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751906/6-yala_dgyv3l.png" },
-            { id: 421, name: "Galle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751975/7-galle_sabqki.png" }
-        ]
-    },
-    {
-        id: 25,
-        category: "More than 2 Day Tours",
-        title: "Elephant & Temple Trail",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752508/3-udawalawe_qqb5dy.png",
-        location: "From Airport to Destinations",
-        rating: 4.7,
-        type: "Extended Tour",
-        desc: "Connects the wildlife of Udawalawe with the scenic beauty of Ella and the cultural significance of Kandy.",
-        nights: 5,
-        pickup: "Airport or Any Location",
-        drop: "Kandy",
-        destinations: [
-            { id: 422, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751758/1-colombo_qvjzlf.png" },
-            { id: 423, name: "Ella", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752090/2-ella_pxnkqr.png" },
-            { id: 424, name: "Udawalawe", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752508/3-udawalawe_qqb5dy.png" },
-            { id: 425, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751767/4-sigiriya_da8rqm.png" },
-            { id: 426, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751771/5-kandy_rtsehy.png" }
-        ]
-    },
-    {
-        id: 26,
-        category: "More than 2 Day Tours",
-        title: "Tea Country to Southern Fort",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751861/image_l8layl.png",
-        location: "From Airport to Destinations",
-        rating: 4.8,
-        type: "Extended Tour",
-        desc: "A journey from Dambulla's cave temples to the misty hills of Nuwara Eliya and Ella, ending at Galle Fort.",
-        nights: 5,
-        pickup: "Airport or Any Location",
-        drop: "Galle",
-        destinations: [
-            { id: 427, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751862/1-negombo_srzcmh.png" },
-            { id: 428, name: "Dambulla", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752455/2-dambulla_nanrt8.png" },
-            { id: 429, name: "Nuwara Eliya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752840/3-nuwaraeliya_chjs8u.png" },
-            { id: 430, name: "Ella", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752499/4-ella_vfsas0.png" },
-            { id: 431, name: "Galle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752491/5-galle_iutd5a.png" }
-        ]
-    },
-    {
-        id: 27,
-        category: "More than 2 Day Tours",
-        title: "Lanka Complete Experience",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751854/image_zpftij.png",
-        location: "From Airport to Destinations",
-        rating: 5,
-        type: "Extended Tour",
-        desc: "An extensive tour covering ancient capitals, hill country, wildlife parks, and the coastal belt.",
-        nights: 8,
-        pickup: "Airport or Any Location",
-        drop: "Colombo",
-        destinations: [
-            { id: 432, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751754/1-negombo_dapmep.png" },
-            { id: 433, name: "Anuradhapura", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752456/2-anuradhapura_v7dilz.png" },
-            { id: 434, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752232/3-sigiriya_lywbwb.png" },
-            { id: 435, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751812/4-kandy_rdh8vj.png" },
-            { id: 436, name: "Ella", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752811/5-ella_ftpjlw.png" },
-            { id: 437, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752773/6-yala_hsmhco.png" },
-            { id: 438, name: "Kalutara", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752446/7-kalutara_xyx3w3.png" },
-            { id: 439, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751752/8-colombo_tbml0y.png" }
-        ]
-    },
-    {
-        id: 28,
-        category: "More than 2 Day Tours",
-        title: "All-Encompassing Island Tour",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765751740/image_uwnew9.png",
-        location: "From Airport to Destinations",
-        rating: 5,
-        type: "Extended Tour",
-        desc: "The ultimate Sri Lanka loop: East coast beaches, ancient history, hill country trekking, and southern safaris.",
-        nights: 9,
-        pickup: "Airport or Any Location",
-        drop: "Colombo",
-        destinations: [
-            { id: 440, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752295/1-negombo_oofzzd.png" },
-            { id: 441, name: "Anuradhapura", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752379/2-anuradhapura_n9usyy.png" },
-            { id: 442, name: "Trincomalee", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752337/3-trincomalee_d9dnpj.png" },
-            { id: 443, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752338/4-sigiriya_fli2tn.png" },
-            { id: 444, name: "Kandy", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752345/5-kandy_br2o7s.png" },
-            { id: 445, name: "Ella", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752456/6-ella_kzxphy.png" },
-            { id: 446, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752732/7-yala_nqpjxr.png" },
-            { id: 447, name: "Kalutara", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752387/8-kalutara_pneph5.png" },
-            { id: 448, name: "Colombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752890/9-colombo_g6n9n6.png" }
-        ]
-    },
-    {
-        id: 29,
-        category: "More than 2 Day Tours",
-        title: "Deep South Coastal Loop",
-        image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752263/image_wuoiuy.png",
-        location: "From Airport to Destinations",
-        rating: 4.8,
-        type: "Extended Tour",
-        desc: "Focusing on the beauty of the southern coast, from Tangalle's beaches to Galle's historic fort, via the hills.",
-        nights: 7,
-        pickup: "Airport or Any Location",
-        drop: "Galle",
-        destinations: [
-            { id: 449, name: "Negombo", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752629/1-negombo_bkerxk.png" },
-            { id: 450, name: "Sigiriya", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752016/2-sigiriya_x8dmk2.png" },
-            { id: 451, name: "Pussellawa", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752136/3-pussellawa_b7i3xh.png" },
-            { id: 452, name: "Ella", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752570/6-ella_kpvlid.png" },
-            { id: 453, name: "Yala", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752055/7-yala_fodzwt.png" },
-            { id: 454, name: "Tangalle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752574/8-tangalle_op3z5i.png" },
-            { id: 455, name: "Galle", image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765752702/9-galle_ssiejz.png" }
-        ]
-    },
-    {
-        id: 30,
         category: "Pickup",
         title: "Airport to Any Destination",
         image: "https://res.cloudinary.com/dfwtcxldy/image/upload/v1765741981/airport_v7nfc4.png",
