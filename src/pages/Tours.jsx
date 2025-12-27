@@ -326,9 +326,10 @@ const Tours = () => {
                                                     {tour.title}
                                                 </h3>
 
-                                                <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4 flex-grow">
-                                                    {tour.desc}
-                                                </p>
+                                                <div
+                                                    className="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4 flex-grow"
+                                                    dangerouslySetInnerHTML={{ __html: tour.desc }}
+                                                />
 
                                                 <div className="grid grid-cols-2 gap-3 mb-6">
                                                     {tour.category === "Pickup" ? (
