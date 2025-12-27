@@ -252,11 +252,17 @@ Sri Lanka’s cultural capital
 usually covers the following popular attractions:
 
 Temple of the Tooth(Sri Dalada Maligawa): This sacred Buddhist temple houses the relic of the tooth of the Buddha and is an essential religious and cultural site.
+
 Kandy Lake: Enjoy a leisurely stroll around the picturesque Kandy Lake, known as the “Bogambara Lake,” located at the heart of the city.
+
 Peradeniya Royal Botanical Gardens: Explore the beautiful gardens, featuring a vast collection of orchids, palm trees, and other flora, spread across 147 acres.
+
 Kandy View Point: Get panoramic views of the city and its surrounding hills from various vantage points like the Bahirawakanda Buddha Statue and other viewpoints.
+
 Cultural Show: Attend a traditional Kandyan dance performance showcasing vibrant costumes and dynamic dance forms.
+
 Gem Museum and Factory: Learn about Sri Lanka’s gem industry and see how precious stones are processed and made into jewelry.
+
 Kandy Market: Experience the local culture by visiting the bustling market, where you can find a variety of traditional crafts, spices, and souvenirs.
 
 Lunch: Savor authentic Sri Lankan cuisine at a local restaurant or enjoy international dishes depending on your preference.`,
