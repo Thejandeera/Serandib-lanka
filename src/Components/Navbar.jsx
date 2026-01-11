@@ -97,6 +97,15 @@ const Navbar = () => {
             >
               <img src="/images/tiktok.svg" alt="TikTok" className="w-6 h-6" />
             </a>
+            <a
+              href="https://www.tripadvisor.co.uk/Attraction_Review-g616035-d34108924-Reviews-Serandib_Lanka_Tours-Ella_Uva_Province.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              title="TripAdvisor"
+            >
+              <img src="/images/tripadvisor.svg" alt="TripAdvisor" className="w-6 h-6" />
+            </a>
           </div>
 
           {/* ---- MOBILE MENU BUTTON ---- */}
@@ -142,6 +151,15 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                 >
                   <img src="/images/tiktok.svg" alt="TikTok" className="w-8 h-8" />
+                </a>
+                <a
+                  href="https://www.tripadvisor.co.uk/Attraction_Review-g616035-d34108924-Reviews-Serandib_Lanka_Tours-Ella_Uva_Province.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-80 transition-opacity p-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <img src="/images/tripadvisor.svg" alt="TripAdvisor" className="w-8 h-8" />
                 </a>
               </div>
               {links.map((link, i) => (
